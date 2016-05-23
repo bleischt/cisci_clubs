@@ -1,0 +1,244 @@
+1 Does the department offer tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Yes, it does!
+1 Does the CSC department offer tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Yes, it does!
+1 Does the department offer free tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Yes, it does!
+1 Does the CSC department offer free tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Yes, it does!
+1 How many tutors are there? 1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently.
+1 How many people work as tutors? 1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently.
+1 Are there a lot of tutors available?  1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently.
+1 Tell me how many tutors there are. 1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently.
+1 How many tutors are in the department? 1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently in the department.
+1 Tell me the number of tutors in the department. 1 | http://tutoring.csc.calpoly.edu/ | There are [NUMBER] tutors currently in the department.
+1 Who are the tutors? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are [PERSON].
+1 What are the names of the tutors? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are [PERSON].
+1 Is [PERSON] a tutor? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 Who is [PERSON]? 1 | http://tutoring.csc.calpoly.edu/ | [DESCRIPTION]
+1 What is the description of [PERSON]? 1 | http://tutoring.csc.calpoly.edu/ | [DESCRIPTION]
+1 Tell me about [PERSON]. 1 | http://tutoring.csc.calpoly.edu/ | [DESCRIPTION]
+1 Tell me who the tutors are. 1 | http://tutoring.csc.calpoly.edu/ | The tutors are [PERSON].
+1 Do you have to pay to come to tutoring? 0 | http://tutoring.csc.calpoly.edu/ | No
+1 Is tutoring free? 0 | http://tutoring.csc.calpoly.edu/ | Yes
+1 How much does tutoring cost? 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is free!
+1 Tell me how much it costs for tutoring. 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is free!
+1 Who is tutoring [COURSE] [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are [PERSON].
+1 Is [PERSON] tutoring [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 Does [PERSON] tutor on [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 What sort of material does tutoring cover? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 What classes can I get help in? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 What courses can I get help in? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 Is there tutoring for [COURSE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 Tell me the subjects I can get help with. 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 What subjects are offered in tutoring? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 Can I get help with [COURSE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 How can I be eligible for tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is available for all students taking CSC courses.
+1 What topics are covered? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
+1 Are there professors at tutoring? 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is led by students, but teachers can help during office hours.
+1 Do tutors get paid? 1 | http://tutoring.csc.calpoly.edu/#contact_us | For more information about tutor pay, contact the lead tutor [PERSON].
+1 How much do tutors get paid? 1 | http://tutoring.csc.calpoly.edu/#contact_us | For more information about tutor pay, contact the lead tutor [PERSON].
+1 How do I apply to become a tutor? 1 | http://tutoring.csc.calpoly.edu/#contact_us | If you are interested in becoming a tutor and have passed CPE 103, email the current lead tutor, [PERSON] at [EMAIL].
+1 What is the application process for becoming a tutor? 1 | http://tutoring.csc.calpoly.edu/#contact_us | For more information about the tutor application process, contact the lead tutor [PERSON].
+1 Who is in charge of the tutors? 1 | http://tutoring.csc.calpoly.edu/ | [PERSON] is the current lead tutor.
+1 Who is the current lead tutor? 1 | http://tutoring.csc.calpoly.edu/ | [PERSON] is the current lead tutor.
+1 Who coordinates tutoring?  1 | http://tutoring.csc.calpoly.edu/ | [PERSON] coordinates tutoring.
+1 Where is tutoring held? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 Where is tutoring located? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 What building is tutoring in? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 What building and room is tutoring held in? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 What room is tutoring in? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 Is there off campus tutoring? 1 | http://tutoring.csc.calpoly.edu/ | No, tutoring is in [BUILDING], [ROOM]
+1 Is tutoring on campus? 0 | http://tutoring.csc.calpoly.edu/ | Yes!
+1 Where is tutoring [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 Where is tutoring on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM]
+1 Is there tutoring on [DAY]? 0 | http://tutoring.csc.calpoly.edu/ | Yes/No
+1 Is there tutoring [DAY]? 0 | http://tutoring.csc.calpoly.edu/ | Yes/No
+1 When is tutoring on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 When is tutoring [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 What time is tutoring held on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 What time is tutoring on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 What time is tutoring [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 What are the tutoring hours on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 What are the tutoring hours [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is from [TIME] - [TIME], [DAY] - [DAY]
+1 Is there tutoring on [HOLIDAY]? 0 | http://tutoring.csc.calpoly.edu/ | No
+1 What do I have to do to become a tutor? 0 | http://tutoring.csc.calpoly.edu/#contact_us | If you've passed CPE 103, you can be a tutor!
+1 What are the requirements to become a tutor? 1 | http://tutoring.csc.calpoly.edu/#contact_us | Passing CPE 103 and email [PERSON] at [EMAIL] for an interview.
+1 How do I become a tutor? 1 | http://tutoring.csc.calpoly.edu/#contact_us | If you've passed CPE 103, email [PERSON] at [EMAIL] for an interview.
+1 Can I be a tutor? 0 | http://tutoring.csc.calpoly.edu/ | If you've passed CPE 103, you can apply to be a tutor!
+1 When can I be a tutor? 0 | http://tutoring.csc.calpoly.edu/ | If you've passed CPE 103, you can apply to be a tutor!
+1 Can I bribe tutors? 0 |  | No!
+1 Will tutors accept bribes? 0 |  | No!
+1 Will tutors stay late? 0 |  | Ask them!
+1 How long will the tutors stay? 1 | http://tutoring.csc.calpoly.edu/ | Tutors are scheduled from [TIME] - [TIME]. But if no students show, tutors will leave after the first 15 minutes.
+1 Will the tutors stay until [TIME]? 1 | http://tutoring.csc.calpoly.edu/ | Yes/No
+1 What if I can't make it to tutoring? 0 |  | Try contacting one of the tutors personally!
+1 How can I get tutoring at a different time? 0 |  | Try contacting one of the tutors personally!
+1 Where is the Tutoring Center? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM].
+1 What building is the Tutoring Center in? 1 | http://tutoring.csc.calpoly.edu/ | Tutoring is in [BUILDING], [ROOM].
+1 Is the Tutoring Center open now? 0 | http://tutoring.csc.calpoly.edu/ | Yes/No
+1 Is the Tutoring Center open [DAY_TIME]? 0 | http://tutoring.csc.calpoly.edu/ | Yes/No
+1 Who can I ask for more information? 1 | http://tutoring.csc.calpoly.edu/ | Please email the current team leader, [PERSON], at [EMAIL]
+1 Who can I talk to for more info? 1 | http://tutoring.csc.calpoly.edu/ | Please email the current team leader, [PERSON], at [EMAIL]
+1 Where can I get more information? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I get more info? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I go for more information? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I go for more info? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I get more information about tutoring? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I get more info about tutoring? 0 | http://tutoring.csc.calpoly.edu/ | You can find out more about tutoring here!
+1 Where can I find a private tutor? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 Where can I find a private tutor for [COURSE]? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 Is there private tutoring? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 Is there private tutoring for [COURSE]? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 Does the tutoring center have private tutors? 0 |  | The tutoring center doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 Does [TUTOR_NAME] do private tutoring? 1 |  | The tutoring center doesn't provide private tutors, but you can ask [PERSON] if they do private tutoring.
+1 How can I become a private tutor? 0 |  | Unfortunately, the tutoring center doesn't provide private tutors.
+1 Is private tutoring free? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 How much does private tutoring cost? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 What subjects can I get private tutoring in? 0 |  | The CSC department doesn't provide private tutors, but you can contact the CSC office to ask for references.
+1 What is a study session? 0 | http://www.sas.calpoly.edu/studysession/ | Study Session forms study groups for students who submit a request to study with a group focused on challenging, selected courses in the Colleges of Science and Math and the College of Engineering.
+1 Tell me what a study session is. 0 | http://www.sas.calpoly.edu/studysession/ | Study Session forms study groups for students who submit a request to study with a group focused on challenging, selected courses in the Colleges of Science and Math and the College of Engineering.
+1 Can you tell me about study sessions? 0 | http://www.sas.calpoly.edu/studysession/ | Study Session forms study groups for students who submit a request to study with a group focused on challenging, selected courses in the Colleges of Science and Math and the College of Engineering.
+1 How do I sign up for a study session? 0 | http://www.sas.calpoly.edu/studysession/ | Logon to My Cal Poly and view “My Classes” in your Home page. Above your classes is a button: “Study Session Request”. Select the button to enter the request process. You must be enrolled in the lecture for the button to appear. Press the “Submit Request” button at the bottom when you’re done.
+1 How do I apply for a study session? 0 | http://www.sas.calpoly.edu/studysession/ | Logon to My Cal Poly and view “My Classes” in your Home page. Above your classes is a button: “Study Session Request”. Select the button to enter the request process. You must be enrolled in the lecture for the button to appear. Press the “Submit Request” button at the bottom when you’re done.
+1 Tell me how to sign up for a study session. 0 | http://www.sas.calpoly.edu/studysession/ | Logon to My Cal Poly and view “My Classes” in your Home page. Above your classes is a button: “Study Session Request”. Select the button to enter the request process. You must be enrolled in the lecture for the button to appear. Press the “Submit Request” button at the bottom when you’re done.
+1 Tell me how to apply for a study session. 0 | http://www.sas.calpoly.edu/studysession/ | Logon to My Cal Poly and view “My Classes” in your Home page. Above your classes is a button: “Study Session Request”. Select the button to enter the request process. You must be enrolled in the lecture for the button to appear. Press the “Submit Request” button at the bottom when you’re done.
+1 Where can I find the study sessions formed? 0 | http://www.sas.calpoly.edu/studysession/ | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf
+1 Tell me where I can find the study sessions already formed. 0 | http://www.sas.calpoly.edu/studysession/ | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf
+1 Where are the study sessions located? 1 | http://www.sas.calpoly.edu/studysession/ | [BUILDING] [ROOM] [ADDRESS]
+1 Tell me where the study sessions are located. 1 | http://www.sas.calpoly.edu/studysession/ | [BUILDING] [ROOM] [ADDRESS]
+1 Who is the coordinator for the study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | [PERSON]
+1 Tell me who the coordinator for the study sessions is. 1 | http://www.sas.calpoly.edu/studysession/ | [PERSON]
+1 How do I get more information about study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | [EMAIL], [PHONE]
+1 Tell me how to get more information about study sessions. 1 | http://www.sas.calpoly.edu/studysession/ | [EMAIL], [PHONE] 
+1 Where do I email for information about study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | [EMAIL]
+1 Where do I call for more inforrmation about study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | [PHONE]
+1 How often do study sessions meet? 0 | http://www.sas.calpoly.edu/studysession/ | They meet twice a week.
+1 Who leads the study session groups? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
+1 Tell me who leads the study session groups? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
+1 Who is in charge of individual study sessions? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
+1 Who is the leader for the study session for [CLASS]? 1 |  | [PERSON]
+1 Who is in charge for the study session for [CLASS]? 1 |  | [PERSON]
+1 Is there a study session for [CLASS]? 1 |  | [YES_NO]
+1 What classes offer a study session? 1 | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf | For a current list of study sessions, see [URL].
+1 What is the study session URL? 0 | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf | [URL]
+1 What clubs would a [MAJOR] major be interested in? 0 | https://cpe.calpoly.edu/clubs/ | It depends. You can check out a list of CPE clubs here: [URL]
+1 Are there any clubs for [TOPIC]? 1 | https://cpe.calpoly.edu/clubs/ | [YES_NO]
+1 What clubs could help me get a job as a [MAJOR] major? 0 | https://cpe.calpoly.edu/clubs/ | Any of these clubs could potentially help you get a job. Many employers look for students involved in clubs related to their line of work.
+1 How many clubs are there? 1 | https://cpe.calpoly.edu/clubs/ | [NUMBER]
+1 What kind of clubs are there? 0 | https://cpe.calpoly.edu/clubs/ | All kinds, more or less. Take a look here: [URL]
+1 Which clubs are affiliated with [DEPARTMENT]? 1 | http://www.asi.calpoly.edu/university_union/club_services | It looks like [CLUB] is affiliated with [DEPARTMENT]. You can check this site to find more: [URL]
+1 Is [CLUB] affiliated with [DEPARTMENT]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 When was [CLUB] founded? 1 | https://cpe.calpoly.edu/clubs/ | [CLUB] was founded
+1 Why was [CLUB] founded? 1 | https://cpe.calpoly.edu/clubs/ | [DESCRIPTION]
+1 Who started [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Which professors advise [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | It looks like [PERSON] is an advisor for [CLUB].
+1 Is there a membership fee for [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Will I get a job if I join [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Is [CLUB] an official club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 Is [CLUB] an unofficial club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 Which department is [CLUB] a part of? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DEPARTMENT]
+1 What makes [CLUB] cool? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
+1 What is the best thing about [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
+1 What is the mission of [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
+1 What does [CLUB] do? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
+1 What room does [CLUB] usually meet in? 1 | http://www.asi.calpoly.edu/university_union/club_services | [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Does [CLUB] have membership? 1 | http://www.asi.calpoly.edu/university_union/club_services | [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Which clubs are free? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Is there a fee for [CLUB]? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Is [CLUB] free? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Which clubs have membership fees? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Do some clubs have dues? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Do I have to pay to be part of [CLUB]? 0 |  | Most clubs are free and all-inclusive. If you have any doubts, you can contact the club organizer.
+1 Where can I get some club swag? 0 |  | Many clubs sell club t-shirts. Contact the club organizer and ask them if they have any t-shirts of your size available for sale.
+1 Do some clubs have swag? 0 |  | Many clubs sell club t-shirts. Contact the club organizer and ask them if they have any t-shirts of your size available for sale.
+1 Does [CLUB] sell merchandise? 0 |  | Many clubs sell club t-shirts. Contact the club organizer and ask them if they have any t-shirts of your size available for sale.
+1 Are there thesis opportunities with [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Can I do my senior project with [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 How can I become an officer for [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Who is the leader of [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [PERSON] is the leader/organizer of [CLUB].
+1 Who are the officers of [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Who is the [POSITION] of [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 Does [CLUB] have an advisor? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 Who is the advisor for [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [CLUB]'s advisor is [PERSON]
+1 Does [CLUB] have funding? 0 |  | Most clubs get limited funding from their department or from ASI, and hold fundraisers for extra expenses.
+1 Where does [CLUB] get funding? 0 |  | Most clubs get limited funding from their department or from ASI, and hold fundraisers for extra expenses.
+1 How do I join a club? 1 | https://cpe.calpoly.edu/students/student-faqs/#General-4 | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
+1 How can I donate to [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 Who can I talk to about [CLUB]? 1 | https://csc.calpoly.edu/clubs/ | You can talk to [PERSON]
+1 Where can I find more info about [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | You can find more info here: [URL]
+1 How can I contact [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | You can contact them by: [EMAIL] [PHONE]
+1 Does [CLUB] have a URL? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What is [CLUB]'s URL? 1 | https://csc.calpoly.edu/clubs/  | The club's URL is [URL].
+1 Does [CLUB] present at club showcase? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Will [CLUB] be at club showcase? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What clubs are at club showcase? 1 | https://csc.calpoly.edu/clubs/  | The following clubs will be at the showcase: [CLUB]
+1 Will [CLUB] be at open house? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What does [CLUB] do? 1 | https://csc.calpoly.edu/clubs/  | [DESCRIPTION]
+1 Does [CLUB] present at WoW? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Does [CLUB] travel? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Does [CLUB] hold competitions? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Does [CLUB] participate in competitions? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is [CLUB] sponsored? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is [CLUB] sponsored by [ORGANIZATION]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What is [CLUB]'s schedule like in [SEASON] [YEAR]? 1 | https://csc.calpoly.edu/clubs/  | Here is the schedule for [CLUB]: [DESCRIPTION]
+1 How many clubs are there in the computer science department? 1 | https://csc.calpoly.edu/clubs/  | There are [NUMBER] clubs in the computer science department
+1 What clubs are in the computer science department? 1 | https://csc.calpoly.edu/clubs/  | The following clubs are in the computer science department: [CLUB]
+1 What is [CLUB] about? 1 | https://csc.calpoly.edu/clubs/  | [DESCRIPTION]
+1 Are there any fees for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What is the schedule for [CLUB] in [SEASON]? 1 | https://csc.calpoly.edu/clubs/  | Here is the schedule for [CLUB]: [DESCRIPTION]
+1 What clubs are related to [SUBJECT]? 1 | https://csc.calpoly.edu/clubs/  | The following clubs are related to [SUBJECT]: [CLUB]
+1 What is the [CLUB]'s goals? 1 | https://csc.calpoly.edu/clubs/  | [DESCRIPTION]
+1 How big is the [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | There are about [NUMBER] people in [CLUB]
+1 How can I get on board for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is how you can get involved: [DESCRIPTION]
+1 When does [CLUB] have elections? 1 | https://csc.calpoly.edu/clubs/  | Elections for [CLUB] are held at [DATE]
+1 What kind of events does [CLUB] do? 1 | https://csc.calpoly.edu/clubs/ | These are some of the events the club hosts: [DESCRIPTION]
+1 What is [CLUB]'s phone number? 1 | https://csc.calpoly.edu/clubs/  | The phone number is [PHONE]
+1 How do I contact [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | You can contact them by: [EMAIL] [PHONE]
+1 When is [CLUB]'s next event? 1 | https://csc.calpoly.edu/clubs/  | The next event is [EVENT] on [DAY] at [TIME] at [LOCATION]
+1 Which clubs offer free food? 1 | https://csc.calpoly.edu/clubs/  | Here are events that have free food: [EVENT]
+1 Does [CLUB] offer free food? 1 | https://csc.calpoly.edu/clubs/  | Here are events that have free food: [EVENT]
+1 Does [CLUB] do anything fun? 1 | https://csc.calpoly.edu/clubs/  | Here are events for the [CLUB] : [EVENT]
+1 Does [CLUB] have social events? 1 | https://csc.calpoly.edu/clubs/  | Here are events for the [CLUB] : [EVENT]
+1 In what room is [CLUB]'s next event? 1 | https://csc.calpoly.edu/clubs/  | The next event is [EVENT]
+1 Does [CLUB] hold fundraisers? 1 | https://csc.calpoly.edu/clubs/  | Here are fundraisers for [CLUB] : [EVENT]
+1 Does [CLUB] invite speakers? 1 | https://csc.calpoly.edu/clubs/  | It depends on the event. Check these out for [CLUB]: [EVENT]
+1 Does [CLUB] give presentations? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What are upcoming events for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is the schedule for [CLUB]: [DESCRIPTION]
+1 When will the [EVENT] take place? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 When is [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 Where is [EVENT] taking place? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 Is the [EVENT] on campus? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is the [EVENT] off campus? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Who is going to [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | Check out the invite list at [URL]
+1 Where is the [EVENT] taking place? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 Where is the [EVENT] located? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 How can I get to [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | Try navigating to [LOCATION]
+1 Will there be food at [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is there food at [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Will food be provided at [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is food provided at [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 What is [EVENT] about? 1 | https://csc.calpoly.edu/clubs/  | [DESCRIPTION]
+1 When is the [EVENT] taking place? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 What updates have been made to [EVENT]? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 What time does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 What day does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets on [DAY]s
+1 When is [CLUB]'s next meeting? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 How many times per [DURATION] does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 How many meetings does [CLUB] hold per [DURATION]? 1 | https://csc.calpoly.edu/clubs/  | The [CLUB] holds about [NUMBER] meetings
+1 Is [CLUB] holding a meeting this [DURATION]? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 How often does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 Does [CLUB] meet on campus? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Does [CLUB] meet off campus? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Where does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets in [BUILDING] room [ROOM]
+1 What room does [CLUB] normally meet in? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets in [BUILDING] room [ROOM]
+1 What building does [CLUB] usually meet in? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets in [BUILDING] room [ROOM]
+1 When are meeting times for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 Where are meetings for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets in [BUILDING] room [ROOM]
+1 When does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 What days do [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets on [DAY]s
+1 What times do [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
+1 When is the next meeting for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | The next meeting for [CLUB] is on [DAY] at [TIME] at [LOCATION]
+1 When will the next meeting for [CLUB] be? 1 | https://csc.calpoly.edu/clubs/  | The next meeting for [CLUB] is on [DAY] at [TIME] at [LOCATION]
+1 What happened at the last meeting for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is what happened at the last meeting: [DESCRIPTION]
+1 What happened on [Date] for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is what happened: [DESCRIPTION]
+1 What [CLUB] meetings take place at [DATE]? 1 | https://csc.calpoly.edu/clubs/  | The following clubs meet on [DATE]: [CLUB]
+1 Is [CLUB] going to have food at the next meeting? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Are there any updates for the [CLUB]'s next meeting? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
+1 How many times a week does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
