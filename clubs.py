@@ -1,5 +1,6 @@
 
 import nltk, random, sys
+from clubs_resources.sentence_distance import sentence_distance
 
 class clubs:
 	moduleContributors = ['Edgard Arroliga', 'Tobias Bleisch', 'Michael Casebolt', 'Justin Postigo', 'Wasae Qureshi', 'Logan Williams']
@@ -64,8 +65,20 @@ class clubs:
 			response_string = history_response + self.dataStore[query]
 			signal = "Normal"
 		else:
-			response_string = "Sorry, I don't know the answer to that."
-			signal = "Unknown"
+			min_distance = 11
+			min_query = None
+			for question in self.dataStore.keys():
+				distance = sentence_distance(query, question)
+				if distance < min_distance:
+					min_distance = distance	
+					min_query = question
+			print("min_distance: " + str(min_distance))
+			if min_query == None:
+				response_string = "Sorry, I don't know the answer to that."
+				signal = "Unknown"
+			else: 
+				response_string = self.dataStore[min_query]
+				signal = "Normal"
 		
 		return ([rating,signal,response_string])
 

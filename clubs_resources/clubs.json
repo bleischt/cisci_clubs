@@ -1,0 +1,7 @@
+{
+	"CLUB" : ["wish", "women involved in software and hardware", "women involved in software", "women involved in hardware",
+		"association for computing machinery", "acm", "cal poly game development", "cpgd", "cal poly linux users group", "cplug",
+		"white hat", "data science", "computer engineering society", "cpes", "institute of electrical and electronics engineers", "IEEE",
+		"society of women engineers", "swe"],
+	"TUTOR" : [  ]
+}
