@@ -13,9 +13,9 @@ Data Lookup Format:
 
 {
    ‘CLUB’: {‘WISH’: {‘advisor’: ‘John Smith’, ‘president’: ‘Kim Possible’, ‘meeting time’: ‘Mondays 4pm-6pm’, ‘meeting location’: ’14-306’},
-                   ‘CPGD’: {‘advisor’: ‘Jane Smith’, ‘president’: ‘Ron Swanson’, ‘meeting time’: ‘Fridays 4am-6am’, ‘meeting location’: ’14-999’}
-                                  }
-                                  ‘TUTOR’: {‘Bill Nye’: {‘major’: ‘computer science’, ‘contact’: ‘email@calpoly.edu’},
-                                                  ‘Chuck Liddell’: {‘major’: ‘software engineering’, ‘contact’: ‘email@calpoly.edu’}
+            ‘CPGD’: {‘advisor’: ‘Jane Smith’, ‘president’: ‘Ron Swanson’, ‘meeting time’: ‘Fridays 4am-6am’, ‘meeting location’: ’14-999’}
+           }
+            ‘TUTOR’: {‘Bill Nye’: {‘major’: ‘computer science’, ‘contact’: ‘email@calpoly.edu’},
+            ‘Chuck Liddell’: {‘major’: ‘software engineering’, ‘contact’: ‘email@calpoly.edu’}
                                                                  }
 }

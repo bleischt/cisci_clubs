@@ -1,0 +1,29 @@
+{
+    "women involved in software and hardware" : ["wish", "women in software and hardware",
+      "women in software hardware", "women involved in software", "women involved in hardware",
+      "women in software", "women in hardware", "women in software & hardware", "women involved in software & hardware",
+      "women involved in software and hardware"],
+
+    "association for computing machinery" : ["association of computing machinery", "acm", "acm club",
+      "association for computing machinery club", "association for computing machinery"],
+
+    "cal poly game development" : ["cal poly game development club", "cal poly game dev", "cal poly game dev", "cpgd",
+      "cp game dev", "cp game dev club", "cp game development club", "cp game development", "cal poly game development"],
+
+    "cal poly linux user group" : ["cal poly linux users group", "cp linux users group", "cp linux user group", "cplug",
+      "linux club", "linux users group", "linux user group", "linux group", "linux users club", "linux user club",
+      "cal poly linux user group"],
+
+    "white hat" : ["white hat club", "white hat security club", "white hat hackers", "white hat hackers club", "white hat"],
+
+    "data science" : ["data science club", "cal poly data science club", "cal poly data science",
+      "cp data science", "cp data science club", "cpds", "ds", "cal poly ds", "cal poly ds club", "data science"],
+
+    "institute of electrical and electronics engineers" : ["ieee", "institute of electrical and electronics engineers"],
+
+    "society of women engineers" : ["swe", "swe club", "society of women engineers club", "women engineers",
+      "women engineers club", "cal poly swe", "cal poly society of women engineers", "cp swe"],
+
+    "poly game review" : [ "pgr", "poly game review club", "poly game review", "pgr club", "game review club",
+      "cal poly game review club", "cp game review", "cal poly game review", "cp game review club"]
+}
