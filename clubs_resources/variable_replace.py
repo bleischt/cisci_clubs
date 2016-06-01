@@ -90,4 +90,3 @@ def tag_query(query):
     return (query, result_dict)
 
 
-
