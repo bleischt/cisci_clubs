@@ -16,8 +16,16 @@ def main():
 	pstringList = pstring.split('.')
 	courses = re.split('CSC/CPE', pstringList[1])[1] + ','
 	courses += re.split('including', pstringList[2])[1]
-	tutoring['courses': courses]
-	
+	tutoring['courses'] = courses
+	p = p.find_next('p')
+	p = p.find_next('p')
+	p = p.find_next('p')
+	lastParList = []
+	for s in p.strings:
+		lastParList.append(s)
+	print(re.match(lastParList[0]))
+	print(lastParList[1])
+	print(lastParList[2])
 	
 	
 if __name__ == "__main__":
