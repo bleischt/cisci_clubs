@@ -20,8 +20,8 @@
 1 How much does tutoring cost? 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is free!
 1 Tell me how much it costs for tutoring. 0 | http://tutoring.csc.calpoly.edu/ | Tutoring is free!
 1 Who is tutoring [COURSE] [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are [PERSON].
-1 Is [PERSON] tutoring [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
-1 Does [PERSON] tutor on [DATE]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 Is [PERSON] tutoring [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
+1 Does [PERSON] tutor on [DAY]? 1 | http://tutoring.csc.calpoly.edu/ | [YES_NO]
 1 What sort of material does tutoring cover? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
 1 What classes can I get help in? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
 1 What courses can I get help in? 1 | http://tutoring.csc.calpoly.edu/ | We offer tutoring for [COURSE].
@@ -113,26 +113,25 @@
 1 Who leads the study session groups? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
 1 Tell me who leads the study session groups? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
 1 Who is in charge of individual study sessions? 0 | http://www.sas.calpoly.edu/studysession/ | The groups are led by an upper division student.
-1 Who is the leader for the study session for [CLASS]? 1 |  | [PERSON]
-1 Who is in charge for the study session for [CLASS]? 1 |  | [PERSON]
-1 Is there a study session for [CLASS]? 1 |  | [YES_NO]
+1 Who is the leader for the study session for [CLASS]? 0 | http://my.calpoly.edu | Check out your portal page for more specific info about study sessions. 
+1 Who is in charge of the study session for [CLASS]? 0 | http://my.calpoly.edu | Check out your portal page for more specific info about study sessions. 
+1 Is there a study session for [CLASS]? 1 | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf | For a current list of study sessions, see [URL].
 1 What classes offer a study session? 1 | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf | For a current list of study sessions, see [URL].
 1 What is the study session URL? 1 | http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf | [URL]
 1 What clubs would a [MAJOR] major be interested in? 1 | https://cpe.calpoly.edu/clubs/ | It depends. You can check out a list of CPE clubs here: [URL]
-1 Are there any clubs for [TOPIC]? 1 | https://cpe.calpoly.edu/clubs/ | [YES_NO]
 1 What clubs could help me get a job as a [MAJOR] major? 1 | https://cpe.calpoly.edu/clubs/ | Any of these clubs could potentially help you get a job. Many employers look for students involved in clubs related to their line of work.
 1 How many clubs are there? 1 | https://cpe.calpoly.edu/clubs/ | [NUMBER]
 1 What kind of clubs are there? 1 | https://cpe.calpoly.edu/clubs/ | All kinds, more or less. Take a look here: [URL]
 1 Which clubs are affiliated with [DEPARTMENT]? 1 | http://www.asi.calpoly.edu/university_union/club_services | It looks like [CLUB] is affiliated with [DEPARTMENT]. You can check this site to find more: [URL]
 1 Is [CLUB] affiliated with [DEPARTMENT]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
-1 When was [CLUB] founded? 1 | https://cpe.calpoly.edu/clubs/ | [CLUB] was founded
+1 When was [CLUB] founded? 1 | https://cpe.calpoly.edu/clubs/ | [CLUB] was founded on [DATE].
 1 Why was [CLUB] founded? 1 | https://cpe.calpoly.edu/clubs/ | [DESCRIPTION]
 1 Who started [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
 1 Which professors advise [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | It looks like [PERSON] is an advisor for [CLUB].
 1 Is there a membership fee for [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
 1 Will I get a job if I join [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | Well, [CLUB] is currently organized by [PERSON]. You can contact them at [EMAIL], or [PHONE], or you can check their URL at [URL].
-1 Is [CLUB] an official club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
-1 Is [CLUB] an unofficial club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO]
+1 Is [CLUB] an official club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO] (official means ASI-recognized)
+1 Is [CLUB] an unofficial club? 1 | http://www.asi.calpoly.edu/university_union/club_services | [YES_NO] (official means ASI-recognized)
 1 Which department is [CLUB] a part of? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DEPARTMENT]
 1 What makes [CLUB] cool? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
 1 What is the best thing about [CLUB]? 1 | http://www.asi.calpoly.edu/university_union/club_services | [DESCRIPTION]
