@@ -9,7 +9,7 @@ myRequest = requests.get(url)
 tutorSoup = BeautifulSoup(myRequest.text,"html.parser")
 
 def main():
-	f = open('tutors_json.txt', 'w')
+	f = open('tutors.json', 'w')
 	tutors = {}
 	for h2 in tutorSoup.find_all('h2'):
 		nameList = h2.string.split()
