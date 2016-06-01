@@ -1,21 +1,35 @@
 Data Lookup Format:
 {
    ‘VARIABLE_NAME1’: {‘VARIABLE_OPTION1’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’},
-                   ‘VARIABLE_OPTION2’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’}
-                                   …
-                                                                         },
-                                                                          ‘VARIABLE_NAME2’: {‘VARIABLE_OPTION1’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’},
-                                                                                           ‘VARIABLE_OPTION2’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’},
-                                                                                                           …
-                                                                                                                                                 },
-                                                                                                                                                   …
+                      ‘VARIABLE_OPTION2’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’}
+                      …
+                     },
+    ‘VARIABLE_NAME2’: {‘VARIABLE_OPTION1’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’},
+                       ‘VARIABLE_OPTION2’: {‘info1’: ‘data1’, ‘info2’: ‘data2’, ‘info3’: ‘data3’},
+                       …
+                      },
+    …
 }
 
+Actual Structure to Follow:
 {
-   ‘CLUB’: {‘WISH’: {‘advisor’: ‘John Smith’, ‘president’: ‘Kim Possible’, ‘meeting time’: ‘Mondays 4pm-6pm’, ‘meeting location’: ’14-306’},
-            ‘CPGD’: {‘advisor’: ‘Jane Smith’, ‘president’: ‘Ron Swanson’, ‘meeting time’: ‘Fridays 4am-6am’, ‘meeting location’: ’14-999’}
-           }
-            ‘TUTOR’: {‘Bill Nye’: {‘major’: ‘computer science’, ‘contact’: ‘email@calpoly.edu’},
+   ‘TUTOR’: {‘Bill Nye’: {‘major’: ‘computer science’, ‘contact’: ‘email@calpoly.edu’},
             ‘Chuck Liddell’: {‘major’: ‘software engineering’, ‘contact’: ‘email@calpoly.edu’}
-                                                                 }
+           }
+
+   'CLUB': {
+            'WISH': {'contact_phone': '8054698050', 
+                     'advisor_phone': '8057565540', 
+                     'description': 'WISH (Women Involved in Software & Hardware) is a support group for female computing majors at the California Polytechnic State University in San Luis Obispo. Our goal is to empower our technical women and rectify the gender gap in the computing field.', 
+                     'advisor_email': 'zwood@calpoly.edu', 
+                     'contact_email': 'wishcalpoly@gmail.com', 
+                     'title': 'Women Involved in Software and Hardware', 
+                     'advisor': 'Zoe Wood', 
+                     'contact_person': 'Nicole Giusti', 
+                     'website': 'http://www.calpoly.edu/~wish/', 
+                     'club_events_list': ..., 
+                     'frequency_of_meetings': ...<daily, weekly, monthly>..., 
+                     'officers': {'president': ..., 'vice president': ..., 'secretary': ..., 'treasurer': ...}}, 
+           }
+
 }
