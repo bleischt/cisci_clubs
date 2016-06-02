@@ -1,9 +1,8 @@
 {
 	"CLUB" : ["women involved in software and hardware", "association for computing machinery",
-		"cal poly game development", "white hat", "data science club", "computer engineering society", "cpes",
+		"cal poly game development", "white hat", "data science club", "computer engineering society",
       "institute of electrical and electronics engineers", "society of women engineers", "poly game review"],
 
-    //Should probably be scraped and filled
 	"TUTOR" : ["Nupur", "Garg", "Nupur Garg", "Melinda", "Lam", "Melinda Lam", 
       "Katelyn", "Hicks", "Katelyn Hicks", "Daniel", "Kauffman", "Daniel Kauffman",
       "Jasper", "Kahn", "Jasper Kahn", "Lana", "Hodzic", "Lana Hodzic", "Kevin", "Ly", 

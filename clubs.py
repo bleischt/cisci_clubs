@@ -1,5 +1,8 @@
 import nltk, random, sys
+import json
 from clubs_resources.sentence_distance import sentence_distance
+from clubs_resources.variable_replace import tag_query
+from clubs_resources.variable_replace import get_key_from_value
 
 
 class clubs:
@@ -105,6 +108,21 @@ def test():
         else:
             print(response[2])
 
+def test_variable_replace():
+    #load dicts
+    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read());
+    # print(id_to_clubVariations)
+    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read());
+    # print(variable_to_values)
+
+    query = "Where does wish meet?"
+    query1 = "Is Jasper Kahn president of society of women engineers?"
+    print(query)
+    print(tag_query(query, variable_to_values, id_to_clubVariations))
+    print(query1)
+    print(tag_query(query1, variable_to_values, id_to_clubVariations))
+    print(get_key_from_value("association for computing machinery", variable_to_values))
 
 if __name__ == "__main__":
-    test()
+    # test()
+    test_variable_replace()

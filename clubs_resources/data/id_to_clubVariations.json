@@ -5,7 +5,7 @@
       "women involved in software and hardware"],
 
     "association for computing machinery" : ["association of computing machinery", "acm", "acm club",
-      "association for computing machinery club", "association for computing machinery"],
+      "association for computing machinery club", "the association for computing machinery", "association for computing machinery"],
 
     "cal poly game development" : ["cal poly game development club", "cal poly game dev", "cal poly game dev", "cpgd",
       "cp game dev", "cp game dev club", "cp game development club", "cp game development", "cal poly game development"],
@@ -14,15 +14,15 @@
       "linux club", "linux users group", "linux user group", "linux group", "linux users club", "linux user club",
       "cal poly linux user group"],
 
-    "white hat" : ["white hat club", "white hat security club", "white hat hackers", "white hat hackers club", "white hat"],
+    "white hat" : ["the white hat club", "white hat club", "white hat security club", "white hat hackers", "white hat hackers club", "white hat"],
 
-    "data science" : ["data science club", "cal poly data science club", "cal poly data science",
-      "cp data science", "cp data science club", "cpds", "ds", "cal poly ds", "cal poly ds club", "data science"],
+    "data science" : ["the data science club", "data science club", "cal poly data science club", "cal poly data science",
+      "cp data science", "cp data science club", "cpds", "cal poly ds", "cal poly ds club", "data science"],
 
     "institute of electrical and electronics engineers" : ["ieee", "institute of electrical and electronics engineers"],
 
     "society of women engineers" : ["swe", "swe club", "society of women engineers club", "women engineers",
-      "women engineers club", "cal poly swe", "cal poly society of women engineers", "cp swe"],
+      "women engineers club", "cal poly swe", "cal poly society of women engineers", "cp swe", "society of women engineers"],
 
     "poly game review" : [ "pgr", "poly game review club", "poly game review", "pgr club", "game review club",
       "cal poly game review club", "cp game review", "cal poly game review", "cp game review club"]

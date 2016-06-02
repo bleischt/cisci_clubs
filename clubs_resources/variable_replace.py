@@ -1,66 +1,40 @@
-# Logan Williams 
-# 5/28/16
 
 # Functions to be used for replacing variables in queries and responses.
-#
-# NOTE: still needs the pre_process implemented with the corresponding data tables (5/28)
-#       and still needs tag_values data for the string_to_tag function (5/28)
+#Logan Williams 5/28
+#Tobias Bleisch 6/1
 
-
-
-# Takes a variation of a variable and returns its standardized version.
-# For example:
-#   pre_process("women in software and hardware") => "WISH"
+# Finds a Key in a dictionary based on it's value. Also works if dict value is a list.
+# Useful for: finding a variation' standardized version
+# Example:
+#   get_key_from_value("women in software and hardware", id_to_clubVariations) => "wish"
+#   get_key_from_value("Cal Poly Game Development", variable_to_values) => "CLUB"
 # This allows the string_to_var function to utilize cleaner dictionaries
 # by mapping variations of variables to a single variable.
-def pre_process(var):
-    
-    # ********* 
-    return
+def get_key_from_value(value, dictionary):
+
+    for key,values in dictionary.items():
+        if value in values:
+                return key
+    return None
 
 
+#Replaces a value in the input query with the key of a matching value
+#in the supplied dictionary
+#Example:
+#   value_replacement("Where does wish meet?", {women involved in software and hardware : [wish, women in hardware, ...], ...})
+#        => "Where does women involved in software and hardware meet?"
+def value_replacement(query, id_to_variations):
+    for id, variations in id_to_variations.items():
+        for var in sorted(variations, key=len, reverse=True):
+            if var in query:
+                query = query.replace(var, id)
+                break
 
-# Takes a variable variation and returns the list of all other possible 
-# variations of it.
-# For example: 
-#   un_pre_process("wish") => ["wish",
-#                              "women in software and hardware", 
-#                              "women involved in software and hardware",
-#                              etc.]
-def un_pre_process(var):
-    
-    # *********
-    return
-
-
-
-# Takes a string variable and returns the corresponding tag word.
-# 'None' is returned if there is no matching tag found.
-# For example:
-#   string_to_tag("Cal Poly Game Development") => "CLUB"
-def string_to_tag(string):
-
-    string = pre_process(string)
-
-    tag = None
-
-    # ********** tag_values needs to be implemented ************* 
-    # tag_values is the dictionary of tags mapped to a list of the possible
-    # variables for that tag. For example, an entry might look like:
-    #  {'CLUB':['CPGD', 'WISH', 'White Hat']} 
-    for tag_key in tag_values:
-        if string in tag_values[tag_key]:
-            if tag == None:
-                print("var '" + string + "' was already labeled '" + tag + "' and is now being renamed '" + tag_key + "'.")
-            tag = tag_key
-
-    return tag
-
-        
+    return query
 
 # Takes in a whole query string and returns a tuple of the string with tagged
 # values and a dictionary mapping tags to values.
-# For example:
+# Example:
 #   tag_query("Who is the president of Women in Software and Hardware?") => 
 #             ("Who is the [POSITION] of [CLUB]?", 
 #              {"POSITION": "president", "CLUB": "Women in Software and Hardware"})
@@ -69,23 +43,18 @@ def string_to_tag(string):
 #       of marking which value in the dict comes first in the query so that we can tell
 #       which variable goes to which position. Also, after we find the variable and do the 
 #       replacing, we should go back and repeat that until we don't see any more of those
-#       specific variable occurences in the string; otherwise, we will never tag a variable
+#       specific variable occurrences in the string; otherwise, we will never tag a variable
 #       if it has already been tagged in the string.
-def tag_query(query):
+def tag_query(query, variable_to_values, id_to_clubVariations):
 
     result_dict = {}
+    query = value_replacement(query, id_to_clubVariations)
 
-    # **(same as prev)** tag_values needs to be implemented ************* 
-    # tag_values is the dictionary of tags mapped to a list of the possible
-    # variables for that tag. For example, an entry might look like:
-    #  {'CLUB':['CPGD', 'WISH', 'White Hat']} 
-    for tag_key in tag_values:
-        for val in tag_values[tag_key]:
-            variations = un_pre_process(val)
-            for variation in variations:
-                if variation in query:
-                    result_dict[tag_key] = variation
-                    query = query.replace(variation, '['+ tag_key + ']')
+    for tag_key,values in variable_to_values.items():
+        for variation in sorted(values, key=len, reverse=True):
+            if variation in query:
+                result_dict[tag_key] = variation
+                query = query.replace(variation, '['+ tag_key.upper() + ']')
 
     return (query, result_dict)
 
