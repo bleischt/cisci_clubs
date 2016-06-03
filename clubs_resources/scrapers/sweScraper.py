@@ -16,14 +16,18 @@ def main():
             for b in body:
                 rows = b.find_all('tr')
                 for row in rows:
-                    #print(row)
-                    name = row.find_all('td')
+		#print(row)
+		name = row.find_all('td')
                     names = [ele.text.strip() for ele in name]
                     if names[0] == '':
                         if names[1:][0] != '' and names[1:][2] != '':
-                            swe[names[1:][0]] = names[1:][2]
+                            newName = names[1:][0].lower()
+                            newName = newName.replace(' ', '_')
+                            swe[newName] = names[1:][2]
                     else:
-                        swe[names[0]] = names[1]
+		        newName1 = names[0].lower()
+			newName1 = newName1.replace(' ','_')
+                        swe[newName1] = names[1]
 
         json.JSONEncoder().encode(swe)
         json.dump(swe, f)
