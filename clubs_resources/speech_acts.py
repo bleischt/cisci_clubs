@@ -59,15 +59,14 @@ class SpeechActs:
         lead = tutor_info['lead']
         return lead + " is currently the lead tutor."
 
-    #Tutoring is held on [DATE] in building [BUILDING] room [ROOM] from [TIME] to [TIME]
+    #Tutoring is held on [DATE] at [LOCATION] from [TIME] to [TIME]
     def tutor_meeting_info():
         tutor_info = self.resources['TUTOR_INFO']
         date = tutor_info['tutor_date']
-        building = tutor_info['tutor_building']
-        room = tutor_info['tutor_room']
+        location = tutor_info['location']
         start_time = tutor_info['tutor_start_time']
         end_time = tutor_info['tutor_end_time']
-        return "Tutoring is held on " + date + " in building " + building + " room " + room + " from " + start_time + " to " + end_time
+        return "Tutoring is held on " + date + " at " + location + " from " + start_time + " to " + end_time
 
     #You can become a tutor if you've passed CPE 103. Email [PERSON] at [EMAIL] to schedule an interview.
     def become_a_tutor():
@@ -99,21 +98,19 @@ class SpeechActs:
         url = specific_club['club_url']
         return "Here's the club's website: " + url
 
-    #[DESCRIPTION]
-    #(about section)
+    #Here is a description of the club: [DESCRIPTION]
     def club_description(club):
         specific_club = self.resources['CLUB'][club]
         description = specific_club['description']
         return description
 
-    #[CLUB] meets on [DAY] at [TIME] in building [BUILDING] room [ROOM]
+    #[CLUB] meets on [DAY] at [TIME] at [LOCATION]
     def club_meeting_info(club):
         specific_club = self.resources['CLUB'][club]
         day = specific_club['meeting_day']
         time = specific_club['meeting_time']
-        building = specific_club['meeting_building']
-        room = specific_club['meeting_room']
-        return club + " meets on " + day + " at " + time + " in building " + building + " room " + room
+        location = specific_club['location']
+        return club + " meets on " + day + " at " + time + " at " + location
 
     #The current officers are: [OFFICER]
     def club_officers(club):
@@ -140,7 +137,7 @@ class SpeechActs:
             events += event + "\n"
         return "Here are the upcoming events: \n" + events
 
-    #[DESCRIPTION]
+    #Here is a description of the event: [DESCRIPTION]
     def event_description(event):
         clubs = self.resources['CLUB']
         for club in clubs:
@@ -148,16 +145,39 @@ class SpeechActs:
                 if event_name == event:
                     return event['description']
 
-    #The event is taking place on [DATE] in building [BUILDING] room [ROOM] from [TIME] to [TIME]
+    #The event is taking place on [DATE] at [LOCATION] from [TIME] to [TIME]
     def event_meeting_info(event):
         clubs = self.resources['CLUB']
         for club in clubs:
             for event_name in club['club_events_list']:
                 if event_name == event:
                     event_date = event_name['event_date']
-                    event_building = event_name['event_building']
-                    event_room = event_name['event_room']
+                    event_location = event_name['event_location']
                     event_start_time = event_name['event_start_time']
                     event_end_time = event_name['event_end_time']
-                    return ("The event is taking palce on " + event_date + " in building " 
-                        + event_building + " room " + event_room + " from " + event_start_time + " to " + event_end_time)
+                    return ("The event is taking palce on " + event_date + " at " + event_location 
+                        + " from " + event_start_time + " to " + event_end_time)
+
+
+
+    #Here is where the study sessions are being held: [LOCATION]
+    def study_sessions_location():
+        study_session = self.resources['STUDY_SESSION']
+        location = study_session['location']
+        return "Here is where the study sessions are being held: " + location
+    
+    #Here is the study session coordinator: [PERSON]
+    def study_session_coordinator():
+        study_session = self.resources['STUDY_SESSION']
+        coordinator = study_session['coordinator']
+        return "Here is the study session coordinator: " + coordinator
+    
+    #Here is the advisor of the club: [PERSON] [PHONE] [EMAIL]
+    def club_advisor(club):
+        clubs = self.resources['CLUB']
+        specific_club = clubs[club]
+        club_advisor = specific_club['advisor']
+        club_advisor_phone = specific_club['advisor_phone']
+        club_advisor_email = specific_club['advisor_email']
+        return "Here is the advisor of the club: " + club_advisor + " "  + club_advisor_phone + " " + club_advisor_email
+
