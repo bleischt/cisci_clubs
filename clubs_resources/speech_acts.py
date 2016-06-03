@@ -1,5 +1,3 @@
-
-
 #Speech acts represent single kernels of information that a user
 #can request in various forms.
 #Example:

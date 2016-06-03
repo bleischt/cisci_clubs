@@ -4,13 +4,12 @@ from clubs_resources.sentence_distance import sentence_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 
-
 class clubs:
     moduleContributors = ['Edgard Arroliga', 'Tobias Bleisch', 'Michael Casebolt', 'Justin Postigo', 'Wasae Qureshi',
                           'Logan Williams']
     moduleName = "Clubs and Tutoring"
     moduleDescription = "This module is for information about clubs and tutoring. The data repository is located in /mnt/cisci/modules/clubs_resources."
-    module_questions = "/mnt/cisci/modules/clubs_resources/questions.txt"
+    module_questions = "clubs_resources/questions.txt"
 
     numberOfResponses = 0
 
@@ -57,8 +56,10 @@ class clubs:
         return ""
 
     def response(self, query, history=[]):
+        threshold = 11
+        min_distance = threshold
         query = query.strip().lower()
-        rating = self.getRating(query)
+        rating = 0  #self.getRating(query)
         if len(query) <= 0:  # signals can be "Normal", "Error", "Question", "Unknown" or "End"
             signal = "Error"
 
@@ -68,14 +69,13 @@ class clubs:
             response_string = history_response + self.dataStore[query]
             signal = "Normal"
         else:
-            min_distance = 11
             min_query = None
             for question in self.dataStore.keys():
                 distance = sentence_distance(query, question)
                 if distance < min_distance:
                     min_distance = distance
                     min_query = question
-            print("min_distance: " + str(min_distance))
+                    rating = 1 - (distance / threshold)
             if min_query == None:
                 response_string = "Sorry, I don't know the answer to that."
                 signal = "Unknown"
@@ -83,7 +83,7 @@ class clubs:
                 response_string = self.dataStore[min_query]
                 signal = "Normal"
 
-        return ([rating, signal, response_string])
+        return [rating, signal, response_string]
 
 def run():
     myModule = clubs()
@@ -92,19 +92,26 @@ def run():
     print("credits:", myModule.credits())
     print("update results: ", myModule.update())
 
+    # load dicts
+    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
+    # print(id_to_clubVariations)
+    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
+    # print(variable_to_values)
+
     query = ""
     response = ""
     history = []
     while query.strip().lower() not in ['quit', 'exit']:
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
+        query = tag_query(query, variable_to_values, id_to_clubVariations)[0]
         response = myModule.response(query, history)
         history.append([query, response])
         if response[1] is "Error":
             print(response[1])
             continue
         else:
-            print(response[2])
+            print(response[2], response[0])
 
 
 def test():
@@ -145,5 +152,6 @@ def test_variable_replace():
     print(get_key_from_value("association for computing machinery", variable_to_values))
 
 if __name__ == "__main__":
-    test()
-    test_variable_replace()
+    run()
+    # test()
+    # test_variable_replace()
