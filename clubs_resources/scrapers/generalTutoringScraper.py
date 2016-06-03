@@ -9,7 +9,7 @@ myRequest = requests.get(url)
 tutorSoup = BeautifulSoup(myRequest.text,"html.parser")
 
 def main():
-	f = open('general_tutoring.json', 'w')
+	f = open('../data/general_tutoring.json', 'w')
 	tutoring = {}
 	p = tutorSoup.find('p')
 	pstring = p.string.replace('\n', '')
