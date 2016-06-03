@@ -31,7 +31,7 @@ class SpeechActs:
         return "The tutors are:\n" + list_tutors 
 
 
-    #[DESCRIPTION]
+    #Here is some information about the tutor: [DESCRIPTION]
     def tutor_information(tutor):
         tutors = self.resources['TUTOR']
         specific_tutor = tutors[tutor]
@@ -40,13 +40,13 @@ class SpeechActs:
             tutor_info += info + " : " + value + ", "
         return tutor_info
 
-    #[PERSON] works on [DATE]
+    #Tutor works on [DAY] at [TIME]
     def tutor_work_days(tutor):
         tutors = self.resources['TUTOR']
         specific_tutor = tutors[tutor]
         date = specific_tutor['work_date']
         return tutor + " works on " + date
-
+        
     #Tutoring is offered for [COURSE]
     def courses_tutored():
         courses = self.resources['COURSE']
