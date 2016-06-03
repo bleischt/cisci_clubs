@@ -74,8 +74,12 @@ def generate_club_detail_pairs(club_record):
         yield (str(detail_titles[i].string), str(details[i].string))
 
 
-data = get_asi_club_data()
-json.JSONEncoder().encode(data)
-fp = open('../data/clubs_data.json', 'w')
-json.dump(data, fp)
-print("Exported to json file: " + fp.name)
+def main():
+    data = get_asi_club_data()
+    json.JSONEncoder().encode(data)
+    fp = open('../data/clubs_data.json', 'w')
+    json.dump(data, fp)
+
+
+if __name__ == "__main__":
+    main()
