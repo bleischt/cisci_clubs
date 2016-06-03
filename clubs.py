@@ -85,6 +85,27 @@ class clubs:
 
         return ([rating, signal, response_string])
 
+def run():
+    myModule = clubs()
+    print("module name: ", myModule.id()[0])
+    print("module description: ", myModule.id()[1])
+    print("credits:", myModule.credits())
+    print("update results: ", myModule.update())
+
+    query = ""
+    response = ""
+    history = []
+    while query.strip().lower() not in ['quit', 'exit']:
+        print("How can I help you? (\"quit\" to exit)", end=" ")
+        query = input()
+        response = myModule.response(query, history)
+        history.append([query, response])
+        if response[1] is "Error":
+            print(response[1])
+            continue
+        else:
+            print(response[2])
+
 
 def test():
     myModule = clubs()
@@ -95,10 +116,10 @@ def test():
     query = ""
     response = ""
     history = []
-    while query.strip() not in ['quit', 'Quit', 'exit', 'Exit']:
-        print("How can I help you? (\"quit\" to exit)", end=" ");
+    while query.strip().lower() not in ['quit', 'exit']:
+        print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
-        if query.strip() in ['quit', 'Quit', 'exit', 'Exit']:
+        if query.strip().lower() in ['quit', 'exit']:
             sys.exit()
         response = myModule.response(query, history)
         history.append([query, response])
@@ -110,9 +131,9 @@ def test():
 
 def test_variable_replace():
     #load dicts
-    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read());
+    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
     # print(id_to_clubVariations)
-    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read());
+    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
     # print(variable_to_values)
 
     query = "Where does wish meet?"
@@ -124,5 +145,5 @@ def test_variable_replace():
     print(get_key_from_value("association for computing machinery", variable_to_values))
 
 if __name__ == "__main__":
-    # test()
+    test()
     test_variable_replace()
