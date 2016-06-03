@@ -8,7 +8,7 @@ myRequest = requests.get(url)
 soup = BeautifulSoup(myRequest.text,"html.parser")
 
 def main():
-        f = open('swe_info.json', 'w')
+        f = open('../data/swe_info.json', 'w')
         swe = {}
         tables = soup.find_all('table')
         for table in tables:

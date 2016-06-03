@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
-        fp = open('studysession.json', 'w')
+        fp = open('../data/studysession.json', 'w')
 
         url = "http://sas.calpoly.edu/studysession/"
         myRequest = requests.get(url)
