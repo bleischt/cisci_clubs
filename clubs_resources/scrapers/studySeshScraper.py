@@ -27,7 +27,8 @@ def main():
                 values = values[0]
                 values = values.replace('\r','')
                 values = values.replace('  ', '')
-
+                names = names.lower()
+                names = names.replace(' ', '_')
                 studyDict[names] = values
 
         json.JSONEncoder().encode(studyDict)
