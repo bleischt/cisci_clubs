@@ -14,6 +14,13 @@ def sentence_distance(sentence1, sentence2):
 
     return levenshtein_distance(tokens1, tokens2, lambda x, y: x == y)
 
+def characterwise_sentence_distance(sentence1, sentence2):
+    return levenshtein_distance(sentence1, sentence2, lambda x, y: x == y)
+
+# Take a weighted average of word and character distance
+def compromise_sentence_distance(sentence1, sentence2):
+    return sentence_distance(sentence1, sentence2) + 0.25 * characterwise_sentence_distance(sentence1, sentence2)
+
 def levenshtein_distance(sequence1, sequence2, equals):
     return _levenshtein_distance_(sequence1, sequence2, equals, {})
     
