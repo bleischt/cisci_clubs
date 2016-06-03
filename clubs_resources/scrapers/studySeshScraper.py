@@ -10,28 +10,33 @@ def main():
         soup = BeautifulSoup(myRequest.text,"html.parser")
 
         studyDict = {}
+        table = soup.find_all('div', {'id':'mainLeftFull'})
+        for t in table:
 
-        table = soup.find('table', attrs={'class':'table_directory'})
+            info = t.find_all('p')
+            info1 = [ele.text.strip() for ele in info]
+            studyDict['description'] = info1[0]
 
-        rows = table.find_all('tr')
+            rows = t.find_all('tr')
 
-        for row in rows:
-                name = row.find_all('th')
-                names = [ele.text.strip() for ele in name]
+            for row in rows:
+                    name = row.find_all('th')
+                    names = [ele.text.strip() for ele in name]
 
-                value = row.find_all('td')
-                values = [ele.text.strip() for ele in value]
+                    value = row.find_all('td')
+                    values = [ele.text.strip() for ele in value]
 
-                names = names[0][:-1]
+                    names = names[0][:-1]
 
-                values = values[0]
-                values = values.replace('\r','')
-                values = values.replace('  ', '')
-                names = names.lower()
-                names = names.replace(' ', '_')
-                studyDict[names] = values
+                    values = values[0]
+                    values = values.replace('\r','')
+                    values = values.replace('  ', '')
+                    names = names.lower()
+                    names = names.replace(' ', '_')
+                    studyDict[names] = values
 
         json.JSONEncoder().encode(studyDict)
         json.dump(studyDict, fp)
 if __name__ == "__main__":
         main()
+
