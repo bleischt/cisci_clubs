@@ -239,6 +239,6 @@
 1 What happened at the last meeting for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is what happened at the last meeting: [DESCRIPTION]
 1 What happened on [Date] for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here is what happened: [DESCRIPTION]
 1 What [CLUB] meetings take place at [DATE]? 1 | https://csc.calpoly.edu/clubs/  | The following clubs meet on [DATE]: [CLUB]
-1 Is [CLUB] going to have food at the next meeting? 1 | https://csc.calpoly.edu/clubs/  | [YES_NO]
+1 Is [CLUB] going to have food at the next meeting? 1 | https://csc.calpoly.edu/clubs/  | Here is information about the event: [DESCRIPTION]
 1 Are there any updates for the [CLUB]'s next meeting? 1 | https://csc.calpoly.edu/clubs/  | The event is taking place on [DAY] at [TIME] at [LOCATION]
 1 How many times a week does [CLUB] meet? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets every [DURATION] on [DAY] at [TIME] at [LOCATION]
