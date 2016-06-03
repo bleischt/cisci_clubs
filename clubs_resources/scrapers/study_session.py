@@ -1,9 +1,11 @@
 import os, sys, random, requests, json
 from bs4 import BeautifulSoup
 
+data_output_file = "../data/" + __file__.replace(".py", ".json")
+
 def main():
 
-        fp = open('../data/studysession.json', 'w')
+        fp = open(data_output_file, 'w')
 
         url = "http://sas.calpoly.edu/studysession/"
         myRequest = requests.get(url)
@@ -37,6 +39,7 @@ def main():
 
         json.JSONEncoder().encode(studyDict)
         json.dump(studyDict, fp)
+
 if __name__ == "__main__":
         main()
 
