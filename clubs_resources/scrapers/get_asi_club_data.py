@@ -33,7 +33,7 @@ def is_related_club(title_data):
     data = title_data[1]
 
     clubs = None
-    with open('../id_to_club.json') as clubs_file:
+    with open('../data/id_to_clubVariations.json') as clubs_file:
         clubs = json.load(clubs_file)
 
     if title in clubs.keys():
@@ -45,6 +45,10 @@ def is_related_club(title_data):
 
     return False
 
+def clean_string(string):
+    # takes a string and changes spaces to underscores and lowercases everything
+    return string.lower().replace(' ', '_')
+
 def get_club_record_data(club_record):
     club_data = {}
 
@@ -53,7 +57,7 @@ def get_club_record_data(club_record):
     club_detail_pairs = generate_club_detail_pairs(club_record)
 
     for (detail_title, detail) in club_detail_pairs:
-        club_data[detail_title] = detail
+        club_data[clean_string(detail_title)] = detail
 
     return (club_title, club_data)
     
@@ -69,5 +73,13 @@ def generate_club_detail_pairs(club_record):
     for i in range(min(len(detail_titles), len(details))):
         yield (str(detail_titles[i].string), str(details[i].string))
 
-data = get_asi_club_data()
-print(data)
+
+def main():
+    data = get_asi_club_data()
+    json.JSONEncoder().encode(data)
+    fp = open('../data/clubs_data.json', 'w')
+    json.dump(data, fp)
+
+
+if __name__ == "__main__":
+    main()

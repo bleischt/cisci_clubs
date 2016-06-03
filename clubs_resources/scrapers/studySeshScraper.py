@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
-        fp = open('studysession.json', 'w')
+        fp = open('../data/studysession.json', 'w')
 
         url = "http://sas.calpoly.edu/studysession/"
         myRequest = requests.get(url)
@@ -27,7 +27,8 @@ def main():
                 values = values[0]
                 values = values.replace('\r','')
                 values = values.replace('  ', '')
-
+                names = names.lower()
+                names = names.replace(' ', '_')
                 studyDict[names] = values
 
         json.JSONEncoder().encode(studyDict)
