@@ -104,14 +104,15 @@ def run():
     while query.strip().lower() not in ['quit', 'exit']:
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
-        query = tag_query(query, variable_to_values, id_to_clubVariations)[0]
-        response = myModule.response(query, history)
-        history.append([query, response])
-        if response[1] is "Error":
-            print(response[1])
-            continue
-        else:
-            print(response[2], response[0])
+        if query.lower() != 'quit' and query.lower() != 'exit':
+            query = tag_query(query, variable_to_values, id_to_clubVariations)[0]
+            response = myModule.response(query, history)
+            history.append([query, response])
+            if response[1] is "Error":
+                print(response[1])
+                continue
+            else:
+                print(response[2], response[0])
 
 
 def test():
