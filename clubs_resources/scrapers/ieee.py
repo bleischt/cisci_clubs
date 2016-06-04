@@ -32,11 +32,12 @@ def get_officers():
 
 def main():
     
-    ieee_officers = get_officers()
+    ieee = {}
+    ieee["officers"] = get_officers()
 
     outfile = open(data_output_file, 'w')
-    json.JSONEncoder().encode(ieee_officers)
-    json.dump(ieee_officers, outfile)
+    json.JSONEncoder().encode(ieee)
+    json.dump(ieee, outfile)
 
 
 if __name__ == "__main__":

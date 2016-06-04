@@ -4,8 +4,15 @@
 import urllib.request as request
 import bs4, json
 
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir) 
+from variable_replace import standardize_club 
+
 asi_clubs_url = "http://www.asi.calpoly.edu/club_directories/listing_bs/"
 data_output_file = "../data/" + __file__.replace(".py", ".json")
+club_variations_file = "../data/id_to_clubVariations.json"
 
 
 def get_asi_club_data():
@@ -21,7 +28,7 @@ def get_club_data_from_soup(soup):
     for club_record in soup.find_all("li", "club_list"):
         title_data = get_club_record_data(club_record)
         if is_related_club(title_data):
-            data[title_data[0]] = title_data[1]
+            data[standardize_club(title_data[0], club_variations_file)] = title_data[1]
     
     return data
 
@@ -32,7 +39,7 @@ def is_related_club(title_data):
     data = title_data[1]
 
     clubs = None
-    with open('../data/id_to_clubVariations.json') as clubs_file:
+    with open(club_variations_file) as clubs_file:
         clubs = json.load(clubs_file)
 
     if title in clubs.keys():

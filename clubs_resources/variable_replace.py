@@ -19,13 +19,14 @@ def get_key_from_value(value, dictionary):
     for key,values in dictionary.items():
         if value in values:
                 return key
+    print(str(value) + " was not found in " + str(dictionary))
     return None
 
 
 # Returns the standardized version of the given club
-def standardize_club(club):
-   f = open(id_to_clubVariations, 'r')
-   return get_key_from_value(club, json.load(f))
+def standardize_club(club, id_to_variations):
+   f = open(id_to_variations, 'r')
+   return get_key_from_value(club.lower(), json.load(f))
 
 
 #Replaces a value in the input query with the key of a matching value
@@ -68,4 +69,5 @@ def tag_query(query, variable_to_values, id_to_clubVariations):
 
     return (query, result_dict)
 
-
+if __name__ == "__main__":
+   pass 
