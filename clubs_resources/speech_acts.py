@@ -95,7 +95,7 @@ class SpeechActs:
     #Here's the club's website: [URL]
     def club_more_info(self, club):
         specific_club = self.resources['CLUB'][club]
-        url = specific_club['club_url']
+        url = specific_club['homepage']
         return "Here's the club's website: " + url
 
     #Here is a description of the club: [DESCRIPTION]
@@ -155,8 +155,9 @@ class SpeechActs:
                     event_location = event_name['event_location']
                     event_start_time = event_name['event_start_time']
                     event_end_time = event_name['event_end_time']
-                    return ("The event is taking palce on " + event_date + " at " + event_location 
+                    return ("The event is taking palace on " + event_date + " at " + event_location 
                         + " from " + event_start_time + " to " + event_end_time)
+        return "The event does not exist!"
 
 
 
