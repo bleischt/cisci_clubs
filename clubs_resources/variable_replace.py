@@ -1,10 +1,14 @@
-
 # Functions to be used for replacing variables in queries and responses.
+
 #Logan Williams 5/28
 #Tobias Bleisch 6/1
 
+import json
+
+id_to_clubVariations = "data/id_to_clubVariations.json"
+
 # Finds a Key in a dictionary based on it's value. Also works if dict value is a list.
-# Useful for: finding a variation' standardized version
+# Useful for: finding a variation's standardized version
 # Example:
 #   get_key_from_value("women in software and hardware", id_to_clubVariations) => "wish"
 #   get_key_from_value("Cal Poly Game Development", variable_to_values) => "CLUB"
@@ -16,6 +20,12 @@ def get_key_from_value(value, dictionary):
         if value in values:
                 return key
     return None
+
+
+# Returns the standardized version of the given club
+def standardize_club(club):
+   f = open(id_to_clubVariations, 'r')
+   return get_key_from_value(club, json.load(f))
 
 
 #Replaces a value in the input query with the key of a matching value
