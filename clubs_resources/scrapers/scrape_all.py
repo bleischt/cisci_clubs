@@ -19,7 +19,7 @@ def make_club_dict(general_club_json_f):
    
    for scraped_club in club_files:
       merged = False
-      os.system('pwd')
+      #os.system('pwd')
       f = open(path_to_data + scraped_club, 'r')
       new_data = json.load(f)
       std_scraped_club = standardize_club(scraped_club[:-5], id_to_variations)
@@ -27,10 +27,12 @@ def make_club_dict(general_club_json_f):
       for club in clubs_dict.keys():
          if club == std_scraped_club:
             # add data to this dict
+            print("update '" + club + "' entry with: " + str(new_data))
             clubs_dict[club].update(new_data) # using update will override any duplicate keys
             merged = True
             break
       if not merged:
+         print("add '" + std_scraped_club + "' to the dictionary")
          clubs_dict[std_scraped_club] = new_data
 
    return clubs_dict
@@ -40,10 +42,9 @@ def get_scraped(scraper_scripts):
    big_dict = {}
    for json_file in json_files:
       f = open(path_to_data + json_file, 'r')
-      if json_file == "general_club.json":
+      if json_file == "club_info.json":
          big_dict["CLUB"] = make_club_dict(f)
       else:
-         print("get data from " + json_file)
          big_dict[json_file[:-5]] = json.load(f)
       f.close()
 
@@ -67,9 +68,10 @@ def get_all_data():
 
 def main():
    #print(run_scrapers())
-   f = open ("clubs_resources/data/all_data.json", 'w')
-   json.JSONEncoder().encode(tutors)
-   json.dump(run_scrapers(), f)
+   f = open ("../data/all_data.json", 'w')
+   data = get_all_data()
+   json.JSONEncoder().encode(data)
+   json.dump(data, f)
 
 
 if __name__ == '__main__':
