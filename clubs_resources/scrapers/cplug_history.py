@@ -1,12 +1,12 @@
 #! /usr/bin/env python
 
 from bs4 import BeautifulSoup
-import requests
-import re
+import re, json, requests
 
 url = "http://cplug.org/about/a-brief-history-of-cplug/"
 years_pos_people = {} 
 years = {}
+data_output_file = "../data/" + __file__.replace(".py", ".json")
 
 # Takes in a string like "2003-2005" and returns a list
 # like [2003, 2004, 2005]
@@ -47,12 +47,16 @@ def main():
           splitted = pos_person.split(':')
           if (len(splitted) == 2):
              pos_person_dict[splitted[0].lower().strip()] = splitted[1].lower().strip()
-       
+
        if (len(pos_person_dict) > 0):
           for yr in yr_range_to_list(years):
               years_pos_people[yr] = pos_person_dict
         
        cur_p = cur_p.find_next('p')
+
+    outfile = open(data_output_file, 'w')
+    json.JSONEncoder().encode(years_pos_people)
+    json.dump(years_pos_people, outfile)
 
 if __name__ == "__main__":
     main()
