@@ -4,6 +4,10 @@ from clubs_resources.sentence_distance import sentence_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 from clubs_resources.speech_acts import *
+from clubs_resources.scrapers.scrape_all import get_all_data
+
+path_to_data = "clubs_resources/data/"
+
 class clubs:
     moduleContributors = ['Edgard Arroliga', 'Tobias Bleisch', 'Michael Casebolt', 'Justin Postigo', 'Wasae Qureshi',
                           'Logan Williams']
@@ -39,6 +43,9 @@ class clubs:
             question_answer[question] = answer
             self.type_of_question[line_spl_at_bar[2][1:].strip()] = question_type
         self.dataStore = question_answer
+        
+        #self.resources = get_all_data()
+        self.resources = json.load(open(path_to_data + "all_data.json", 'r'))
         return True
 
     def getRating(self, query, history=[]):  # get rating based on query and (if you wish) the history
@@ -52,7 +59,7 @@ class clubs:
             signal = q_a[1][1]
             response_string = q_a[1][2]
             if signal == "End":
-                return ""
+               return ""
             if query == question:
                 return "You already asked this question. Here's the answer: "
         return ""
