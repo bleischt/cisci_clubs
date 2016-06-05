@@ -43,7 +43,7 @@ def get_scraped(scraper_scripts):
    for json_file in json_files:
       f = open(path_to_data + json_file, 'r')
       if json_file == "club_info.json":
-         big_dict["CLUB"] = make_club_dict(f)
+         big_dict["club"] = make_club_dict(f)
       else:
          big_dict[json_file[:-5]] = json.load(f)
       f.close()
