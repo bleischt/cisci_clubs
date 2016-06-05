@@ -13,16 +13,16 @@ class SpeechActs:
 
     #There are currently [NUMBER] tutors
     def num_tutors(self):
-        tutors = self.resources['TUTOR']
+        tutors = self.resources['tutors']
         num_tutors = 0
         for tutor in tutors:
             num_tutors += 1
-        return "There are currently " + num_tutors + " tutors"
+        return "There are currently " + str(num_tutors) + " tutors"
 
 
     #The tutors are: [PERSON]
     def list_of_tutors(self):
-        tutors = self.resources['TUTOR']
+        tutors = self.resources['tutors']
         list_tutors = ""
         for tutor in tutors:
             list_tutors += tutor + "\n"
@@ -31,7 +31,10 @@ class SpeechActs:
 
     #Here is some information about the tutor: [DESCRIPTION]
     def tutor_information(self, tutor):
-        tutors = self.resources['TUTOR']
+        tutors = self.resources['tutors']
+        for tutor_name in tutors:
+            if tutor in tutor_name:
+                tutor = tutor_name
         specific_tutor = tutors[tutor]
         tutor_info = ""
         for info, value in specific_tutor.items():
@@ -40,7 +43,7 @@ class SpeechActs:
 
     #Tutor works on [DAY] at [TIME]
     def tutor_work_days(self, tutor):
-        tutors = self.resources['TUTOR']
+        tutors = self.resources['tutors']
         specific_tutor = tutors[tutor]
         date = specific_tutor['work_date']
         return tutor + " works on " + date
@@ -55,13 +58,13 @@ class SpeechActs:
 
     #[PERSON] is currently the lead tutor.
     def lead_tutor(self):
-        tutor_info = self.resources['TUTOR_INFO']
+        tutor_info = self.resources['tutor_info']
         lead = tutor_info['lead']
         return lead + " is currently the lead tutor."
 
     #Tutoring is held on [DATE] at [LOCATION] from [TIME] to [TIME]
     def tutor_meeting_info(self):
-        tutor_info = self.resources['TUTOR_INFO']
+        tutor_info = self.resources['tutor_info']
         date = tutor_info['tutor_date']
         location = tutor_info['location']
         start_time = tutor_info['tutor_start_time']
@@ -70,14 +73,14 @@ class SpeechActs:
 
     #You can become a tutor if you've passed CPE 103. Email [PERSON] at [EMAIL] to schedule an interview.
     def become_a_tutor(self):
-        tutor_info = self.resources['TUTOR_INFO']
+        tutor_info = self.resources['tutor_info']
         lead = tutor_info['lead']
         lead_email = tutor_info['lead_email']
         return "You can become a tutor if you've passed CPE 103. Email " + lead + " at " + lead_email + " to schedule an interview"
 
     #Please email the current lead tutor [PERSON] at [EMAIL] for more info.
     def tutoring_more_info(self):
-        tutor_info = self.resources['TUTOR_INFO']
+        tutor_info = self.resources['tutor_info']
         lead = tutor_info['lead']
         lead_email = tutor_info['lead_email']
         return "Please email the current lead tutor " + lead + " at " + lead_email + " for more information"
@@ -161,13 +164,13 @@ class SpeechActs:
 
     #Here is where the study sessions are being held: [LOCATION]
     def study_sessions_location(self):
-        study_session = self.resources['STUDY_SESSION']
+        study_session = self.resources['study_session']
         location = study_session['location']
         return "Here is where the study sessions are being held: " + location
     
     #Here is the study session coordinator: [PERSON]
     def study_session_coordinator(self):
-        study_session = self.resources['STUDY_SESSION']
+        study_session = self.resources['study_session']
         coordinator = study_session['coordinator']
         return "Here is the study session coordinator: " + coordinator
     
