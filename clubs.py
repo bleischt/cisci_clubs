@@ -139,7 +139,10 @@ class clubs:
                 response_string = self.dataStore[min_query]
                 signal = "Normal"
         if self.type_of_question[response_string] == "1":
-            response_string = self.replace_variable_in_answer(response_string, tags)
+            try:
+                response_string = self.replace_variable_in_answer(response_string, tags)
+            except:
+                response_string = "Not enough data to respond to this question:\n" + response_string
         return [rating, signal, response_string]
 
 def run():
