@@ -53,7 +53,7 @@ def is_related_club(title_data):
 
 def clean_string(string):
     # takes a string and changes spaces to underscores and lowercases everything
-    return string.lower().replace(' ', '_')
+    return string.lower().replace(' ', '_').replace(':', '')
 
 def get_club_record_data(club_record):
     club_data = {}
