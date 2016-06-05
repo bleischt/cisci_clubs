@@ -3,13 +3,13 @@ import os, sys, random, requests, re, json, io
 from bs4 import BeautifulSoup
 
 url = "http://tutoring.csc.calpoly.edu/home.html"
-
 myRequest = requests.get(url)
-
 tutorSoup = BeautifulSoup(myRequest.text,"html.parser")
 
+data_output_file = "../data/" + __file__.replace(".py", ".json")
+
 def main():
-	f = open('../data/general_tutoring.json', 'w')
+	f = open(data_output_file, 'w')
 	tutoring = {}
 	p = tutorSoup.find('p')
 	pstring = p.string.replace('\n', '')

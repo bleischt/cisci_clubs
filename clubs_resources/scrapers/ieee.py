@@ -1,6 +1,7 @@
 import os, sys, ast, random, requests, re, json, io
 from bs4 import BeautifulSoup
 
+data_output_file = "../data/" + __file__.replace(".py", ".json")
 
 def get_officers():
     url = "http://calpolyieee.org/officers/"
@@ -31,11 +32,12 @@ def get_officers():
 
 def main():
     
-    ieee_officers = get_officers()
+    ieee = {}
+    ieee["officers"] = get_officers()
 
-    outfile = open('../data/ieee_officers.json', 'w')
-    json.JSONEncoder().encode(ieee_officers)
-    json.dump(ieee_officers, outfile)
+    outfile = open(data_output_file, 'w')
+    json.JSONEncoder().encode(ieee)
+    json.dump(ieee, outfile)
 
 
 if __name__ == "__main__":
