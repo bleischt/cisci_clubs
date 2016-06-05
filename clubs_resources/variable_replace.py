@@ -30,7 +30,7 @@ def standardize_club(club, id_to_variations):
 
 
 #Replaces a value in the input query with the key of a matching value
-#in the supplied dictionary
+#in the supplied dictionary. Used for standardizaton of club names mostly.
 #Example:
 #   value_replacement("Where does wish meet?", {women involved in software and hardware : [wish, women in hardware, ...], ...})
 #        => "Where does women involved in software and hardware meet?"
@@ -60,9 +60,10 @@ def tag_query(query, variable_to_values, id_to_clubVariations):
 
     result_dict = {}
     query = value_replacement(query, id_to_clubVariations)
-
+    print(query)
     for tag_key,values in variable_to_values.items():
         for variation in sorted(values, key=len, reverse=True):
+            print(variation)
             if variation in query:
                 result_dict[tag_key] = variation
                 query = query.replace(variation, '['+ tag_key.upper() + ']')

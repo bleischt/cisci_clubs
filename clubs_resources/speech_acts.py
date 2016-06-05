@@ -81,7 +81,6 @@ class SpeechActs:
         lead = tutor_info['lead']
         lead_email = tutor_info['lead_email']
         return "Please email the current lead tutor " + lead + " at " + lead_email + " for more information"
-        return None
 
 
     #Here are the list of official clubs within the Computer Science department: [CLUB]
@@ -158,7 +157,6 @@ class SpeechActs:
                     return ("The event is taking palace on " + event_date + " at " + event_location 
                         + " from " + event_start_time + " to " + event_end_time)
         return "The event does not exist!"
-
 
 
     #Here is where the study sessions are being held: [LOCATION]
