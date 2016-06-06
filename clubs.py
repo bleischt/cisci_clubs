@@ -1,6 +1,8 @@
 import nltk, random, sys
 import json
 import math
+import re
+
 
 from clubs_resources.sentence_distance import sentence_distance
 from clubs_resources.variable_replace import tag_query
@@ -43,6 +45,7 @@ class clubs:
             question_type = line_spl_at_bar[0][len(line_spl_at_bar[0]) - 2:].strip()
             question = line_spl_at_bar[0][2:-2].strip().lower()
             answer = line_spl_at_bar[2].strip()
+            question = re.sub('[^0-9a-zA-Z\s]+', '', question)
             question_answer[question] = answer
             self.type_of_question[line_spl_at_bar[2][1:].strip()] = question_type
         self.dataStore = question_answer
@@ -115,6 +118,7 @@ class clubs:
     def response(self, query_tag, history=[]):
         query = query_tag[0]
         tags = query_tag[1]
+        query = re.sub('[^0-9a-zA-Z\s]+', '', query)
         threshold = 11
         min_distance = threshold
         query = query.strip().lower()
