@@ -156,11 +156,11 @@ class clubs:
                 term_frequency[question] = {}
                 for word in question.split(" "):
                     temp_freq = term_frequency[question]
-                    if word not in stopset:
-                        if word in temp_freq:
-                            temp_freq[word] += 1
-                        else:
-                            temp_freq[word] = 1
+                    #if word not in stopset:
+                    if word in temp_freq:
+                        temp_freq[word] += 1
+                    else:
+                        temp_freq[word] = 1
                     term_frequency[word] = temp_freq
 
             #Normalizing
