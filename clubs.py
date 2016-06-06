@@ -1,5 +1,7 @@
 import nltk, random, sys
 import json
+import math
+
 from clubs_resources.sentence_distance import sentence_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
@@ -125,6 +127,8 @@ class clubs:
             response_string = history_response + self.dataStore[query]
             signal = "Normal"
         else:
+            #Commenting out levenstien to try tf-idf
+            """
             min_query = None
             for question in self.dataStore.keys():
                 distance = sentence_distance(query, question)
@@ -138,6 +142,71 @@ class clubs:
             else:
                 response_string = self.dataStore[min_query]
                 signal = "Normal"
+            """
+
+            #Doing TF on the questions
+            term_frequency = {}
+            for question in self.dataStore.keys():
+                term_frequency[question] = {}
+                for word in question.split(" "):
+                    temp_freq = term_frequency[question]
+                    if word in temp_freq:
+                        temp_freq[word] += 1
+                    else:
+                        temp_freq[word] = 1
+                    term_frequency[word] = temp_freq
+            #print(term_frequency)
+
+            #Normalizing
+            for doc, freq in term_frequency.items():
+                num_words = 0
+                for word in freq:
+                    num_words += freq[word]
+                for word in freq:
+                    term_frequency[doc][word] = freq[word]/num_words
+            # print(term_frequency)
+
+            #idf 
+            term_idf = {}
+            for word in query.split(" "):
+                docs_occurs = 0
+                for question in self.dataStore.keys():
+                    if word in question:
+                        docs_occurs += 1
+                if docs_occurs != 0:
+                    term_idf[word] = 1 + math.log(len(self.dataStore.keys())/docs_occurs)
+                else:
+                    term_idf[word] = 0
+            # print (term_idf) 
+
+            #tf*idf
+            tf_idf = {}
+            for question in self.dataStore.keys():
+                tf_idf[question] = {}
+                tf_idf_words = {}
+                for word in query.split(" "):
+                    if word in term_frequency[question]:
+                        tf_word = term_frequency[question][word]
+                        idf_word = term_idf[word]
+                        tf_mult_idf = tf_word * idf_word
+                        tf_idf_words[word] = tf_mult_idf
+                    else:
+                        tf_idf_words[word] = 0
+                tf_idf[question] = tf_idf_words
+            # print ("Last")
+            # print (tf_idf)
+
+            results = {}
+            for question, words in tf_idf.items():
+                result_value = 0
+                for word, v in words.items():
+                    result_value += v
+                results[question] = result_value
+            final_result = list(reversed(sorted(results, key= results.get)))
+            #print ("End")
+            estimate_query = final_result[0]
+            response_string = self.dataStore[estimate_query]
+            signal = "Normal"
         if self.type_of_question[response_string] == "1":
             try:
                 response_string = self.replace_variable_in_answer(response_string, tags)
