@@ -7,6 +7,7 @@ from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 from clubs_resources.speech_acts import *
 from clubs_resources.scrapers.scrape_all import get_all_data
+from nltk.corpus import stopwords
 
 path_to_data = "clubs_resources/data/"
 
@@ -143,6 +144,7 @@ class clubs:
                 response_string = self.dataStore[min_query]
                 signal = "Normal"
             """
+            stopset = stopwords.words('english')
 
             #Doing TF on the questions
             term_frequency = {}
@@ -150,10 +152,11 @@ class clubs:
                 term_frequency[question] = {}
                 for word in question.split(" "):
                     temp_freq = term_frequency[question]
-                    if word in temp_freq:
-                        temp_freq[word] += 1
-                    else:
-                        temp_freq[word] = 1
+                    if word not in stopset:
+                        if word in temp_freq:
+                            temp_freq[word] += 1
+                        else:
+                            temp_freq[word] = 1
                     term_frequency[word] = temp_freq
             #print(term_frequency)
 
@@ -174,7 +177,11 @@ class clubs:
                     if word in question:
                         docs_occurs += 1
                 if docs_occurs != 0:
-                    term_idf[word] = 1 + math.log(len(self.dataStore.keys())/docs_occurs)
+                    if "[" in word and "]" in word:
+                        term_idf[word] = 5 + math.log(len(self.dataStore.keys())/docs_occurs)
+                    else:
+                        term_idf[word] = 1 + math.log(len(self.dataStore.keys())/docs_occurs)
+
                 else:
                     term_idf[word] = 0
             # print (term_idf) 
@@ -203,7 +210,9 @@ class clubs:
                     result_value += v
                 results[question] = result_value
             final_result = list(reversed(sorted(results, key= results.get)))
-            #print ("End")
+            # print ("List")
+            # print (final_result)
+            # print ("End")
             estimate_query = final_result[0]
             response_string = self.dataStore[estimate_query]
             signal = "Normal"
