@@ -145,7 +145,7 @@ class clubs:
                 signal = "Normal"
             """
             stopset = stopwords.words('english')
-
+            # Remove ?., from question and query
             #Doing TF on the questions
             term_frequency = {}
             for question in self.dataStore.keys():
@@ -158,7 +158,6 @@ class clubs:
                         else:
                             temp_freq[word] = 1
                     term_frequency[word] = temp_freq
-            #print(term_frequency)
 
             #Normalizing
             for doc, freq in term_frequency.items():
@@ -167,7 +166,6 @@ class clubs:
                     num_words += freq[word]
                 for word in freq:
                     term_frequency[doc][word] = freq[word]/num_words
-            # print(term_frequency)
 
             #idf 
             term_idf = {}
@@ -184,7 +182,6 @@ class clubs:
 
                 else:
                     term_idf[word] = 0
-            # print (term_idf) 
 
             #tf*idf
             tf_idf = {}
@@ -200,8 +197,6 @@ class clubs:
                     else:
                         tf_idf_words[word] = 0
                 tf_idf[question] = tf_idf_words
-            # print ("Last")
-            # print (tf_idf)
 
             results = {}
             for question, words in tf_idf.items():
@@ -209,10 +204,8 @@ class clubs:
                 for word, v in words.items():
                     result_value += v
                 results[question] = result_value
+
             final_result = list(reversed(sorted(results, key= results.get)))
-            # print ("List")
-            # print (final_result)
-            # print ("End")
             estimate_query = final_result[0]
             response_string = self.dataStore[estimate_query]
             signal = "Normal"
