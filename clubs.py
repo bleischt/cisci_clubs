@@ -124,6 +124,7 @@ class clubs:
             history_response = self.searchHistory(query, history)
             response_string = history_response + self.dataStore[query]
             signal = "Normal"
+            rating = 1.0
         else:
             min_query = None
             for question in self.dataStore.keys():
