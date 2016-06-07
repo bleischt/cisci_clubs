@@ -15,7 +15,7 @@ def main():
 		nameList = h2.string.split()
 		name = nameList[0] + " " + nameList[1]
 		description = ""
-		for string in h2.find_next('p').strings:
+		for string in h2.find_next('p').stripped_strings:
 			description += string
 		tutors[name] = {"description" : description.replace('\n', '')}
 	json.JSONEncoder().encode(tutors)
