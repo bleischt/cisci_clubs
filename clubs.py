@@ -131,6 +131,7 @@ class clubs:
             history_response = self.searchHistory(query, history)
             response_string = history_response + self.dataStore[query]
             signal = "Normal"
+            rating = 1.0
         else:
             #Commenting out levenstien to try tf-idf
             """
