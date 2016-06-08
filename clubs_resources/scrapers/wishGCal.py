@@ -6,8 +6,7 @@ from oauth2client.file import Storage
 from oauth2client.client import OAuth2WebServerFlow
 from datetime import datetime
 
-def main():
-
+def run():
 
     http = httplib2.Http()
 
@@ -16,8 +15,8 @@ def main():
 
     events = service.events().list(calendarId='wishcalpoly@gmail.com').execute()
 
-    print(events)
+    return events
 
 if __name__ == "__main__":
-    main()
+    run()
 

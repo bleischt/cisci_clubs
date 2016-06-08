@@ -10,6 +10,7 @@ data_output_file =  "../data/" + __file__.replace(".py", ".json")
 
 def main():
 	tempf = open(data_output_file, 'w')
+
 	wishDict = {}
 	wishDict['officers'] = {}
 
@@ -18,6 +19,8 @@ def main():
 		for string in h3.stripped_strings:
 			strings.append(string)
 		wishDict['officers'][strings[0]] = strings[1]
+
+   wishDict['event_list'] = wishGCal.run()
 
 	json.JSONEncoder().encode(wishDict)
 	json.dump(wishDict, tempf)
