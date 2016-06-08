@@ -23,8 +23,17 @@ class clubs:
     resources = {}
     numberOfResponses = 0
     type_of_question = {}
+
+    # load dicts
+    id_to_clubVariations = {}
+    # print(id_to_clubVariations)
+    variable_to_values = {}
+    # print(variable_to_values)
+
     def __init__(self):
         self.dataStore = {}  # you may read data from a pickeled file or other sources
+        self.id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
+        self.variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
         self.update()
 
     def id(self):
@@ -115,7 +124,8 @@ class clubs:
             return speechact.club_advisor(tags['CLUB'])
         else:
             return "Function not made for that answer."
-    def response(self, query_tag, history=[]):
+    def response(self, normal_query, history=[]):
+        query_tag = tag_query(normal_query, self.variable_to_values, self.id_to_clubVariations)
         query = query_tag[0]
         tags = query_tag[1]
         query = re.sub('[^0-9a-zA-Z\s]+', '', query)
@@ -228,12 +238,6 @@ def run():
     print("credits:", myModule.credits())
     print("update results: ", myModule.update())
 
-    # load dicts
-    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
-    # print(id_to_clubVariations)
-    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
-    # print(variable_to_values)
-
     query = ""
     response = ""
     history = []
@@ -241,8 +245,7 @@ def run():
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
         if query.lower() != 'quit' and query.lower() != 'exit':
-            query_tag = tag_query(query, variable_to_values, id_to_clubVariations)
-            response = myModule.response(query_tag, history)
+            response = myModule.response(query, history)
             history.append([query, response])
             if response[1] is "Error":
                 print(response[1])
