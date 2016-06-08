@@ -26,7 +26,6 @@ def get_club_data_from_soup(soup):
     data = {}
 
     for club_record in soup.find_all("li", "club_list"):
-        print(club_record)
         title_data = get_club_record_data(club_record)
         if is_related_club(title_data):
             data[standardize_club(title_data[0], club_variations_file)] = title_data[1]

@@ -42,7 +42,7 @@ def main():
       tutors[name] = {"description" : description.replace('\n', '')}
 
    print("before: " + str(tutors))
-   merge_calendar_info(tutors)
+   #merge_calendar_info(tutors)
    print("after: " + str(tutors))
 
    json.JSONEncoder().encode(tutors)

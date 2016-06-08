@@ -10,7 +10,7 @@ from variable_replace import standardize_club
 # IMPORTANT VARIABLES HERE
 path_to_data = "../data/" 
 non_data_files = ["id_to_clubVariations.json", "variables_to_values.json"] #files to ignore that aren't data files, but are in data/
-club_files = ["ieee.json", "swe.json", "cplug.json"] # ***** add new club files here to be added to the big club dict ******
+club_files = ["wish.json", "ieee.json", "swe.json", "cplug.json"] # ***** add new club files here to be added to the big club dict ******
 id_to_variations = "../data/id_to_clubVariations.json"
 
 # using data from club_files and general_club, makes one big club data dictionary
