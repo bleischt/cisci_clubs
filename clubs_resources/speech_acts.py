@@ -4,7 +4,7 @@
 #   ->Who is the advisor of pgr?
 #   ->Which professor advises pgr?
 #       ->[Advisor] advises [CLUB]
-
+import re 
 class SpeechActs:
     resources = {}
 
@@ -45,44 +45,49 @@ class SpeechActs:
     def tutor_work_days(self, tutor):
         tutors = self.resources['tutors']
         specific_tutor = tutors[tutor]
-        date = specific_tutor['work_date']
-        return tutor + " works on " + date
+        times = specific_tutor['times']
+        days = specific_tutor['days']
+        return tutor + " works on " + days + " at " + times
         
     #Tutoring is offered for [COURSE]
     def courses_tutored(self):
-        courses = self.resources['COURSE']
+        tutor_info = self.resources['tutor_info']
+        courses = tutor_info['courses']
         list_courses = ""
-        for course in courses:
-            list_courses += course + "\n"
+        for course in courses.split(","):
+            num_class = re.findall('[0-9]+', course.strip())
+            class_name = num_class[0]
+            list_courses += "CPE " + str(class_name) + "\n"
         return "Tutoring is offered for:\n" + list_tutors
 
     #[PERSON] is currently the lead tutor.
     def lead_tutor(self):
         tutor_info = self.resources['tutor_info']
-        lead = tutor_info['lead']
+        lead = tutor_info['lead_tutor']
         return lead + " is currently the lead tutor."
 
     #Tutoring is held on [DATE] at [LOCATION] from [TIME] to [TIME]
     def tutor_meeting_info(self):
         tutor_info = self.resources['tutor_info']
-        date = tutor_info['tutor_date']
-        location = tutor_info['location']
-        start_time = tutor_info['tutor_start_time']
-        end_time = tutor_info['tutor_end_time']
-        return "Tutoring is held on " + date + " at " + location + " from " + start_time + " to " + end_time
+        location = tutor_info['building'] + tutor_info['room']
+        start_time = tutor_info['startTime']
+        end_time = tutor_info['endTime']
+        startDay = tutor_info['startDay']
+        endDay = tutor_info['endDay']
+        return "Tutoring is held from " + startDay + " to " + endDay + " at " + location + " from " + start_time + " to " + end_time
 
     #You can become a tutor if you've passed CPE 103. Email [PERSON] at [EMAIL] to schedule an interview.
     def become_a_tutor(self):
         tutor_info = self.resources['tutor_info']
-        lead = tutor_info['lead']
-        lead_email = tutor_info['lead_email']
+        lead = tutor_info['lead_tutor']
+        lead_email = tutor_info['contact_email']
         return "You can become a tutor if you've passed CPE 103. Email " + lead + " at " + lead_email + " to schedule an interview"
 
     #Please email the current lead tutor [PERSON] at [EMAIL] for more info.
     def tutoring_more_info(self):
         tutor_info = self.resources['tutor_info']
-        lead = tutor_info['lead']
-        lead_email = tutor_info['lead_email']
+        lead = tutor_info['lead_tutor']
+        lead_email = tutor_info['contact_email']
         return "Please email the current lead tutor " + lead + " at " + lead_email + " for more information"
 
 
@@ -108,12 +113,15 @@ class SpeechActs:
 
     #[CLUB] meets on [DAY] at [TIME] at [LOCATION]
     def club_meeting_info(self, club):
-        specific_club = self.resources['CLUB'][club]
-        day = specific_club['meeting_day']
-        time = specific_club['meeting_time']
-        location = specific_club['location']
-        return club + " meets on " + day + " at " + time + " at " + location
-
+        # specific_club = self.resources['CLUB'][club]
+        # day = specific_club['meeting_day']
+        # time = specific_club['meeting_time']
+        # location = specific_club['location']
+        # return club + " meets on " + day + " at " + time + " at " + location
+        contact_email = self.resources['CLUB']['contact_email']
+        contact_person = self.resources['CLUB']['contact_person']
+        return "I am not sure when they meet. But you can contact " + contact_person + " for more information: " + contact_email
+    
     #The current officers are: [OFFICER]
     def club_officers(self, club):
         specific_club = self.resources['CLUB'][club]
@@ -133,7 +141,7 @@ class SpeechActs:
     #Here are the upcoming events: [EVENT]
     def list_of_club_events(self, club):
         specific_club = self.resources['CLUB'][club]
-        list_events = specific_club['club_events_list']
+        list_events = specific_club['event_list']
         events = ""
         for event in list_events:
             events += event + "\n"
@@ -143,7 +151,7 @@ class SpeechActs:
     def event_description(self, event):
         clubs = self.resources['CLUB']
         for club in clubs:
-            for event_name in club['club_events_list']:
+            for event_name in club['event_list']:
                 if event_name == event:
                     return event['description']
 
@@ -151,7 +159,7 @@ class SpeechActs:
     def event_meeting_info(self, event):
         clubs = self.resources['CLUB']
         for club in clubs:
-            for event_name in club['club_events_list']:
+            for event_name in club['event_list']:
                 if event_name == event:
                     event_date = event_name['event_date']
                     event_location = event_name['event_location']
