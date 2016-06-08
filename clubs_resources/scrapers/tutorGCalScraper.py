@@ -5,9 +5,10 @@ from oauth2client.file import Storage
 from oauth2client.client import OAuth2WebServerFlow
 from datetime import datetime
 
-def main():
 
-
+# returns the dictionary
+def run():
+   
     http = httplib2.Http()
 
     service = build(serviceName='calendar', version='v3', http=http,
@@ -15,7 +16,7 @@ def main():
 
     events = service.events().list(calendarId='uqokuji5ise4d2rutdost9k1j8@group.calendar.google.com').execute()
     tutorDict = {}
-    fp = open('../data/tutorGCal.json', 'w')
+    #fp = open('../data/tutorGCal.json', 'w')
 
     for val in events.values():
         for v in val:
@@ -57,8 +58,10 @@ def main():
                                             'end' : endTime}
 
     od = collections.OrderedDict(sorted(tutorDict.items()))
-    json.JSONEncoder().encode(od)
-    json.dump(od, fp)
+    #json.JSONEncoder().encode(od)
+    #json.dump(od, fp)
+
+    return od
 
 if __name__ == "__main__":
-    main()
+    run()
