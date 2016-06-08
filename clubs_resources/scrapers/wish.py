@@ -6,7 +6,7 @@ url = "http://www.calpoly.edu/~wish/pages/officers.html"
 myRequest = requests.get(url)
 soup = BeautifulSoup(myRequest.text,"html.parser")
 
-data_output_file =  __file__.replace(".py", ".json")#"../data/" + __file__.replace(".py", ".json")
+data_output_file =  "../data/" + __file__.replace(".py", ".json")
 
 def main():
 	tempf = open(data_output_file, 'w')
