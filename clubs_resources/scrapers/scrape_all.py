@@ -52,10 +52,14 @@ def get_scraped(scraper_scripts):
 
 
 def run_scrapers():
-
+   
    scraper_scripts = [pyfile for pyfile in os.listdir('.') if pyfile[-3:] == '.py' and pyfile != __file__ and pyfile != "__init__.py"]# <--- this path will need to be changed if file structure is changed
-   #for scraper_script in scraper_scripts:
-      #os.system("python3 " + scraper_script)
+
+   for scraper_script in scraper_scripts:
+      try:
+         os.system("python3 " + scraper_script)
+      except:
+         print("error running " + scraper_script)
    
    big_dict = get_scraped(scraper_scripts)
 
