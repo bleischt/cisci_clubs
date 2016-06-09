@@ -106,7 +106,7 @@ class SpeechActs:
         url = specific_club['homepage']
         return "Here's the club's website: " + url
 
-    #Here is a description of the club: [DESCRIPTION]
+    #Here is a description of the club: [DESCRIPTION] works
     def club_description(self, club):
         specific_club = self.resources['club'][club]
         description = specific_club['description']
@@ -123,7 +123,7 @@ class SpeechActs:
         contact_person = self.resources['club']['contact_person']
         return "I am not sure when they meet. But you can contact " + contact_person + " for more information: " + contact_email
     
-    #The current officers are: [OFFICER]
+    #The current officers are: [OFFICER] works
     def club_officers(self, club):
         specific_club = self.resources['club'][club]
         club_officers = ""
@@ -131,7 +131,7 @@ class SpeechActs:
             club_officers += officer + " : " + value + ", "
         return club_officers
 
-    #You can contact [PERSON] for more info: [EMAIL] [PHONE]
+    #You can contact [PERSON] for more info: [EMAIL] [PHONE] works
     def club_contact(self, club):
         specific_club = self.resources['club'][club]
         contact_person = specific_club['contact_person']
@@ -172,19 +172,19 @@ class SpeechActs:
 
 
 
-    #Here is where the study sessions are being held: [LOCATION]
+    #Here is where the study sessions are being held: [LOCATION] works
     def study_sessions_location(self):
         study_session = self.resources['study_session']
         location = study_session['location']
         return "Here is where the study sessions are being held: " + location
     
-    #Here is the study session coordinator: [PERSON]
+    #Here is the study session coordinator: [PERSON] works
     def study_session_coordinator(self):
         study_session = self.resources['study_session']
         coordinator = study_session['coordinator']
         return "Here is the study session coordinator: " + coordinator
     
-    #Here is the advisor of the club: [PERSON] [PHONE] [EMAIL]
+    #Here is the advisor of the club: [PERSON] [PHONE] [EMAIL] works
     def club_advisor(self, club):
         clubs = self.resources['club']
         specific_club = clubs[club]
