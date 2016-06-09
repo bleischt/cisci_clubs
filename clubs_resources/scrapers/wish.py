@@ -1,5 +1,6 @@
 import os, sys, random, requests, re, json, io
 from bs4 import BeautifulSoup
+import wishGCal
 
 
 url = "http://www.calpoly.edu/~wish/pages/officers.html"
