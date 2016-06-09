@@ -3,6 +3,7 @@ import bs4, json
 
 cpgd_feed_url = 'http://cpgd.org/index.php/feed/'
 
+data_output_file = "../data/" + __file__.replace(".py", ".json")
 
 def get_cpgd_event_data():
     with request.urlopen(cpgd_feed_url) as response_object:
@@ -35,7 +36,7 @@ def get_cpgd_event_data_from_soup(soup):
 
 def main():
     events = get_cpgd_event_data()
-    fp = open('../data/cpgd_data.json', 'w')
+    fp = open(data_output_file, 'w')
     json.dump({'club_events_data': events}, fp)
 
 

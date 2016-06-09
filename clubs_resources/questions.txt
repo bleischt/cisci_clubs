@@ -103,8 +103,10 @@
 1 Where can I find the study sessions formed? 0 | http://www.sas.calpoly.edu/studysession/ | Check this url out for more information: http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf
 1 Tell me where I can find the study sessions already formed. 0 | http://www.sas.calpoly.edu/studysession/ | Check this url out for more information: http://www.sas.calpoly.edu/docs/studysession/CurrentStudySessions.pdf
 1 Where are the study sessions located? 1 | http://www.sas.calpoly.edu/studysession/ | Here is where the study sessions are being held: [LOCATION]
+1 Where are study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | Here is where the study sessions are being held: [LOCATION]
 1 Tell me where the study sessions are located. 1 | http://www.sas.calpoly.edu/studysession/ | Here is where the study sessions are being held: [LOCATION]
 1 Who is the coordinator for the study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | Here is the study session coordinator: [PERSON]
+1 Who is the study session coordinator? 1 | http://www.sas.calpoly.edu/studysession/ | Here is the study session coordinator: [PERSON]
 1 Tell me who the coordinator for the study sessions is. 1 | http://www.sas.calpoly.edu/studysession/ | Here is the study session coordinator: [PERSON]
 1 How do I get more information about study sessions? 1 | http://www.sas.calpoly.edu/studysession/ | You can contact [EMAIL] or [PHONE] to get more information about study sessions.
 1 Tell me how to get more information about study sessions. 1 | http://www.sas.calpoly.edu/studysession/ | You can contact [EMAIL] or [PHONE] to get more information about study sessions.
@@ -180,6 +182,8 @@
 1 Is [CLUB] sponsored by [ORGANIZATION]? 1 | https://csc.calpoly.edu/clubs/  | Here's the club's website: [URL]
 1 What is [CLUB]'s schedule like in [SEASON] [YEAR]? 1 | https://csc.calpoly.edu/clubs/  | [CLUB] meets on [DAY] at [TIME] at [LOCATION]
 1 How many clubs are there in the computer science department? 1 | https://csc.calpoly.edu/clubs/  | Here are the list of official clubs within the Computer Science department: [CLUB]
+1 How many clubs are there in the csc department? 1 | https://csc.calpoly.edu/clubs/  | Here are the list of official clubs within the Computer Science department: [CLUB]
+1 How many clubs are there in csc? 1 | https://csc.calpoly.edu/clubs/  | Here are the list of official clubs within the Computer Science department: [CLUB]
 1 What clubs are in the computer science department? 1 | https://csc.calpoly.edu/clubs/  | Here are the list of official clubs within the Computer Science department: [CLUB]
 1 What is [CLUB] about? 1 | https://csc.calpoly.edu/clubs/  | Here is a description of the club: [DESCRIPTION]
 1 Are there any fees for [CLUB]? 1 | https://csc.calpoly.edu/clubs/  | Here's the club's website: [URL]
