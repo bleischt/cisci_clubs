@@ -225,6 +225,10 @@ class clubs:
             estimate_query = final_result[0]
             response_string = self.dataStore[estimate_query]
             signal = "Normal"
+            rating = 0
+            for word_query in query.split(" "):
+                if word_query in term_frequency[estimate_query]:
+                    rating += term_frequency[estimate_query][word_query]
         if response_string in self.type_of_question and self.type_of_question[response_string] == "1":
             try:
                 response_string = self.replace_variable_in_answer(response_string, tags)
