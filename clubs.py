@@ -5,6 +5,7 @@ import re
 
 
 from clubs_resources.sentence_distance import sentence_distance
+from clubs_resources.sentence_distance import two_level_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 from clubs_resources.speech_acts import *
@@ -218,7 +219,7 @@ class clubs:
                 result_value = 0
                 for word, v in words.items():
                     result_value += v
-                results[question] = result_value - sentence_distance(query, question)
+                results[question] = result_value - two_level_distance(query, question)
 
             final_result = list(reversed(sorted(results, key= results.get)))
             estimate_query = final_result[0]
