@@ -5,6 +5,7 @@ import re
 
 
 from clubs_resources.sentence_distance import sentence_distance
+from clubs_resources.sentence_distance import two_level_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 from clubs_resources.speech_acts import *
@@ -23,8 +24,17 @@ class clubs:
     resources = {}
     numberOfResponses = 0
     type_of_question = {}
+
+    # load dicts
+    id_to_clubVariations = {}
+    # print(id_to_clubVariations)
+    variable_to_values = {}
+    # print(variable_to_values)
+
     def __init__(self):
         self.dataStore = {}  # you may read data from a pickeled file or other sources
+        self.id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
+        self.variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
         self.update()
 
     def id(self):
@@ -115,7 +125,8 @@ class clubs:
             return speechact.club_advisor(tags['CLUB'])
         else:
             return "Function not made for that answer."
-    def response(self, query_tag, history=[]):
+    def response(self, normal_query, history=[]):
+        query_tag = tag_query(normal_query, self.variable_to_values, self.id_to_clubVariations)
         query = query_tag[0]
         tags = query_tag[1]
         query = re.sub('[^0-9a-zA-Z\s]+', '', query)
@@ -208,7 +219,7 @@ class clubs:
                 result_value = 0
                 for word, v in words.items():
                     result_value += v
-                results[question] = result_value - sentence_distance(query, question)
+                results[question] = result_value - two_level_distance(query, question)
 
             final_result = list(reversed(sorted(results, key= results.get)))
             estimate_query = final_result[0]
@@ -228,12 +239,6 @@ def run():
     print("credits:", myModule.credits())
     print("update results: ", myModule.update())
 
-    # load dicts
-    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
-    # print(id_to_clubVariations)
-    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
-    # print(variable_to_values)
-
     query = ""
     response = ""
     history = []
@@ -241,8 +246,7 @@ def run():
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
         if query.lower() != 'quit' and query.lower() != 'exit':
-            query_tag = tag_query(query, variable_to_values, id_to_clubVariations)
-            response = myModule.response(query_tag, history)
+            response = myModule.response(query, history)
             history.append([query, response])
             if response[1] is "Error":
                 print(response[1])

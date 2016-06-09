@@ -9,6 +9,7 @@ from variable_replace import standardize_club
 
 # IMPORTANT VARIABLES HERE
 path_to_data = "../data/" 
+ignore_files = [__file__, "__init__.py", "wishGCal.py", "tutorGCal.py"]
 non_data_files = ["id_to_clubVariations.json", "variables_to_values.json"] #files to ignore that aren't data files, but are in data/
 club_files = ["wish.json", "ieee.json", "swe.json", "cplug.json"] # ***** add new club files here to be added to the big club dict ******
 id_to_variations = "../data/id_to_clubVariations.json"
@@ -27,12 +28,12 @@ def make_club_dict(general_club_json_f):
       for club in clubs_dict.keys():
          if club == std_scraped_club:
             # add data to this dict
-            print("update '" + club + "' entry with: " + str(new_data))
+            #print("update '" + club + "' entry with: " + str(new_data))
             clubs_dict[club].update(new_data) # using update will override any duplicate keys
             merged = True
             break
       if not merged:
-         print("add '" + std_scraped_club + "' to the dictionary")
+         #print("add '" + std_scraped_club + "' to the dictionary")
          clubs_dict[std_scraped_club] = new_data
 
    return clubs_dict
@@ -53,13 +54,13 @@ def get_scraped(scraper_scripts):
 
 def run_scrapers():
    
-   scraper_scripts = [pyfile for pyfile in os.listdir('.') if pyfile[-3:] == '.py' and pyfile != __file__ and pyfile != "__init__.py"]# <--- this path will need to be changed if file structure is changed
+   scraper_scripts = [pyfile for pyfile in os.listdir('.') if pyfile[-3:] == '.py' and pyfile not in ignore_files]# <--- this path will need to be changed if file structure is changed
 
    for scraper_script in scraper_scripts:
       try:
          os.system("python3 " + scraper_script)
       except:
-         print("error running " + scraper_script)
+         print("ERROR: exception while running " + scraper_script)
    
    big_dict = get_scraped(scraper_scripts)
 
