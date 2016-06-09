@@ -1,10 +1,15 @@
 import nltk, random, sys
 import json
+import math
+import re
+
+
 from clubs_resources.sentence_distance import sentence_distance
 from clubs_resources.variable_replace import tag_query
 from clubs_resources.variable_replace import get_key_from_value
 from clubs_resources.speech_acts import *
 from clubs_resources.scrapers.scrape_all import get_all_data
+from nltk.corpus import stopwords
 
 path_to_data = "clubs_resources/data/"
 
@@ -18,8 +23,17 @@ class clubs:
     resources = {}
     numberOfResponses = 0
     type_of_question = {}
+
+    # load dicts
+    id_to_clubVariations = {}
+    # print(id_to_clubVariations)
+    variable_to_values = {}
+    # print(variable_to_values)
+
     def __init__(self):
         self.dataStore = {}  # you may read data from a pickeled file or other sources
+        self.id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
+        self.variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
         self.update()
 
     def id(self):
@@ -40,6 +54,7 @@ class clubs:
             question_type = line_spl_at_bar[0][len(line_spl_at_bar[0]) - 2:].strip()
             question = line_spl_at_bar[0][2:-2].strip().lower()
             answer = line_spl_at_bar[2].strip()
+            question = re.sub('[^0-9a-zA-Z\s]+', '', question)
             question_answer[question] = answer
             self.type_of_question[line_spl_at_bar[2][1:].strip()] = question_type
         self.dataStore = question_answer
@@ -109,9 +124,11 @@ class clubs:
             return speechact.club_advisor(tags['CLUB'])
         else:
             return "Function not made for that answer."
-    def response(self, query_tag, history=[]):
+    def response(self, normal_query, history=[]):
+        query_tag = tag_query(normal_query, self.variable_to_values, self.id_to_clubVariations)
         query = query_tag[0]
         tags = query_tag[1]
+        query = re.sub('[^0-9a-zA-Z\s]+', '', query)
         threshold = 11
         min_distance = threshold
         query = query.strip().lower()
@@ -124,7 +141,10 @@ class clubs:
             history_response = self.searchHistory(query, history)
             response_string = history_response + self.dataStore[query]
             signal = "Normal"
+            rating = 1.0
         else:
+            #Commenting out levenstien to try tf-idf
+            """
             min_query = None
             for question in self.dataStore.keys():
                 distance = sentence_distance(query, question)
@@ -138,7 +158,73 @@ class clubs:
             else:
                 response_string = self.dataStore[min_query]
                 signal = "Normal"
-        if self.type_of_question[response_string] == "1":
+            """
+            stopset = stopwords.words('english')
+            # Remove ?., from question and query
+            #Doing TF on the questions
+            term_frequency = {}
+            for question in self.dataStore.keys():
+                term_frequency[question] = {}
+                for word in question.split(" "):
+                    temp_freq = term_frequency[question]
+                    #if word not in stopset:
+                    if word in temp_freq:
+                        temp_freq[word] += 1
+                    else:
+                        temp_freq[word] = 1
+                    term_frequency[word] = temp_freq
+
+            #Normalizing
+            for doc, freq in term_frequency.items():
+                num_words = 0
+                for word in freq:
+                    num_words += freq[word]
+                for word in freq:
+                    term_frequency[doc][word] = freq[word]/num_words
+
+            #idf 
+            term_idf = {}
+            for word in query.split(" "):
+                docs_occurs = 0
+                for question in self.dataStore.keys():
+                    if word in question:
+                        docs_occurs += 1
+                if docs_occurs != 0:
+                    if "[" in word and "]" in word:
+                        term_idf[word] = 5 + math.log(len(self.dataStore.keys())/docs_occurs)
+                    else:
+                        term_idf[word] = 1 + math.log(len(self.dataStore.keys())/docs_occurs)
+
+                else:
+                    term_idf[word] = 0
+
+            #tf*idf
+            tf_idf = {}
+            for question in self.dataStore.keys():
+                tf_idf[question] = {}
+                tf_idf_words = {}
+                for word in query.split(" "):
+                    if word in term_frequency[question]:
+                        tf_word = term_frequency[question][word]
+                        idf_word = term_idf[word]
+                        tf_mult_idf = tf_word * idf_word
+                        tf_idf_words[word] = tf_mult_idf
+                    else:
+                        tf_idf_words[word] = 0
+                tf_idf[question] = tf_idf_words
+
+            results = {}
+            for question, words in tf_idf.items():
+                result_value = 0
+                for word, v in words.items():
+                    result_value += v
+                results[question] = result_value - sentence_distance(query, question)
+
+            final_result = list(reversed(sorted(results, key= results.get)))
+            estimate_query = final_result[0]
+            response_string = self.dataStore[estimate_query]
+            signal = "Normal"
+        if response_string in self.type_of_question and self.type_of_question[response_string] == "1":
             try:
                 response_string = self.replace_variable_in_answer(response_string, tags)
             except:
@@ -152,12 +238,6 @@ def run():
     print("credits:", myModule.credits())
     print("update results: ", myModule.update())
 
-    # load dicts
-    id_to_clubVariations = json.loads(open("clubs_resources/data/id_to_clubVariations.json").read())
-    # print(id_to_clubVariations)
-    variable_to_values = json.loads(open("clubs_resources/data/variable_to_values.json").read())
-    # print(variable_to_values)
-
     query = ""
     response = ""
     history = []
@@ -165,8 +245,7 @@ def run():
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
         if query.lower() != 'quit' and query.lower() != 'exit':
-            query_tag = tag_query(query, variable_to_values, id_to_clubVariations)
-            response = myModule.response(query_tag, history)
+            response = myModule.response(query, history)
             history.append([query, response])
             if response[1] is "Error":
                 print(response[1])

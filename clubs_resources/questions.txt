@@ -9,6 +9,7 @@
 1 How many tutors are in the department? 1 | http://tutoring.csc.calpoly.edu/ | There are currently [NUMBER] tutors
 1 Tell me the number of tutors in the department. 1 | http://tutoring.csc.calpoly.edu/ | There are currently [NUMBER] tutors
 1 Who are the tutors? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are: [PERSON]
+1 When does [PERSON] tutor? 1 | http://tutoring.csc.calpoly.edu/ | Tutor works on [DAY] at [TIME]
 1 What are the names of the tutors? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are: [PERSON]
 1 Is [PERSON] a tutor? 1 | http://tutoring.csc.calpoly.edu/ | The tutors are: [PERSON]
 1 Who is [PERSON]? 1 | http://tutoring.csc.calpoly.edu/ | Here is some information about the tutor: [DESCRIPTION]

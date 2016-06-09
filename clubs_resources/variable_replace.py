@@ -65,7 +65,10 @@ def tag_query(query, variable_to_values, id_to_clubVariations):
         for variation in sorted(values, key=len, reverse=True):
             if variation in query:
                 result_dict[tag_key] = variation
-                query = query.replace(variation, '['+ tag_key.upper() + ']')
+                if tag_key.upper() == "TUTOR":
+                    query = query.replace(variation, '['+ "PERSON" + ']')    
+                else:
+                    query = query.replace(variation, '['+ tag_key.upper() + ']')
 
     return (query, result_dict)
 

@@ -33,7 +33,7 @@ def get_club_data_from_soup(soup):
     return data
 
 def is_related_club(title_data):
-    """ Returns true if the given (title, data) tuple is a club listed in id_to_clubs.json """
+    """ Returns true if the given (title, data) tuple is a club listed in id_to_clubVariations.json """
  
     title = title_data[0]
     data = title_data[1]
