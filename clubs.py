@@ -136,7 +136,10 @@ class clubs:
         rating = 0  #self.getRating(query)
         if len(query) <= 0:  # signals can be "Normal", "Error", "Question", "Unknown" or "End"
             signal = "Error"
-
+            return [rating, signal, ""]
+        if "bye" in query.lower() or "quit" in query.lower():
+            signal = "End"
+            return [rating, signal, ""]
         response_string = ""
         if query in self.dataStore.keys():
             history_response = self.searchHistory(query, history)
@@ -144,22 +147,6 @@ class clubs:
             signal = "Normal"
             rating = 1.0
         else:
-            #Commenting out levenstien to try tf-idf
-            """
-            min_query = None
-            for question in self.dataStore.keys():
-                distance = sentence_distance(query, question)
-                if distance < min_distance:
-                    min_distance = distance
-                    min_query = question
-                    rating = 1 - (distance / threshold)
-            if min_query == None:
-                response_string = "Sorry, I don't know the answer to that."
-                signal = "Unknown"
-            else:
-                response_string = self.dataStore[min_query]
-                signal = "Normal"
-            """
             stopset = stopwords.words('english')
             # Remove ?., from question and query
             #Doing TF on the questions
@@ -246,17 +233,19 @@ def run():
     query = ""
     response = ""
     history = []
-    while query.strip().lower() not in ['quit', 'exit']:
+    while True:
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
-        if query.lower() != 'quit' and query.lower() != 'exit':
-            response = myModule.response(query, history)
-            history.append([query, response])
-            if response[1] is "Error":
-                print(response[1])
-                continue
-            else:
-                print(response[2], response[0])
+        
+        response = myModule.response(query, history)
+        history.append([query, response])
+        if response[1] is "End":
+            sys.exit()
+        if response[1] is "Error":
+            print(response[1])
+            continue
+        else:
+            print(response[2], response[0])
 
 
 def test():
@@ -268,13 +257,14 @@ def test():
     query = ""
     response = ""
     history = []
-    while query.strip().lower() not in ['quit', 'exit']:
+    while True:
         print("How can I help you? (\"quit\" to exit)", end=" ")
         query = input()
-        if query.strip().lower() in ['quit', 'exit']:
-            sys.exit()
         response = myModule.response(query, history)
         history.append([query, response])
+        print (response[1])
+        if response[1] is "End":
+            sys.exit()
         if response[1] is "Error":
             print(response[1])
             continue
