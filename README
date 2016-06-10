@@ -1,0 +1,28 @@
+
+Team Members:
+
+-Edgard Arroliga
+-Tobias Bleisch
+-Logan Williams
+-Wasae Qureshi
+-Justin Postigo
+-Michael Casebolt
+
+
+Strategy/Data Sources:
+
+-Wrote web scrapers to get data and script to aggregate everything
+-Defined large nested dictionary to contain aggregation of data
+-Grouped known questions and narrowed variety of responses
+-Implemented variable replacement to recognize important terms (club,tutor,etc.)
+-Utilize combination of Levenshtein distance and tf*idf to match input
+    question to known question
+-Mapped known questions to functions that access stored data
+
+Weaknesses/Problems:
+
+-Dataset not very complete (clubs don't put much info online)
+-Manual mapping from questions to functions
+-Not currently handling new questions, only matching to known
+-No followup questions or memory
+
